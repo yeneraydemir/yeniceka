@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="footer-contact pt-3">
             <p>Saray, 5. Cd. NO:19/D, 06378<br>Kahramankazan / Ankara</p>
             <p>Mezbaha ve kesimhane ekipmanlarında hijyenik, dayanıklı çözümler</p>
-            <p class="mt-3"><strong>Telefon:</strong> <span><a href="tel:+905382374389">+90 538 237 43 89</a></span></p>
-            <p><strong>E-posta:</strong> <span><a href="mailto:info@cekamezbaha.com">info@cekamezbaha.com</a></span></p>
+            <p class="mt-3"><strong>Telefon:</strong> <span><a class="text-dark" href="tel:+905382374389">+90 538 237 43 89</a></span></p>
+            <p><strong>E-posta:</strong> <span><a class="text-dark" href="mailto:info@cekamezbaha.com">info@cekamezbaha.com</a></span></p>
           </div>
           <div class="social-links d-flex mt-4">
             <a href="https://www.instagram.com/cekamezbaha/" aria-label="Instagram - Ceka Mezbaha" title="Instagram" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>

@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <!-- LOGO -->
       <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
         <img class="img-fluid" src="./assets/img/logo/ceka-bull.png" alt="Ceka Mezbaha Logo">
+        <h5 class="logo-text">CEKA</h5>
       </a>
 
       <!-- NAV -->
@@ -16,12 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
           <li><a href="/">Anasayfa</a></li>
           <li><a href="hakkimizda.html">Hakkımızda</a></li>
 
-            <li class="dropdown">
-              <a href="kurban-kesim-urunleri.html" class="cursor-default">
-                <span>Ürünler</span>
-                <i class="bi bi-chevron-down toggle-dropdown"></i>
-              </a>
-              <ul>
+          <!-- Ürünler dropdown -->
+          <li class="dropdown">
+            <a href="kurban-kesim-urunleri.html" class="cursor-default">
+              <span>Ürünler</span>
+              <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
+            <ul>
               <li><a href="buyukbas-kesim-ekipmanlari.html">Büyükbaş Kesim Ekipmanları</a></li>
               <li><a href="kucukbas-kesim-ekipmanlari.html">Küçükbaş Kesim Ekipmanları</a></li>
               <li><a href="kurban-kesim-hijyen-ekipmanlari.html">Kurban Kesim Hijyen Ekipmanları</a></li>
@@ -42,11 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <div class="header-lang d-xl-flex align-items-center btn-getstarted">
         <button class="lang-btn" aria-label="Dili değiştir">
-          <img src="./assets/img/logo/turk-bayragi.png" alt="Türkçe">
+          <img src="./assets/img/logo/turk-bayragi.png" alt="Türk Bayrağı">
         </button>
-        <button class="lang-btn" aria-label="Dili değiştir">
-          <img src="./assets/img/logo/turk-bayragi.png" alt="Türkçe">
+        <button class="lang-btn flag-gray" aria-label="Dili değiştir">
+          <img src="./assets/img/logo/ingiliz-bayragi.png" alt="İngiliz Bayrağı">
         </button>
+
       </div>
 
     </div>
@@ -134,9 +137,8 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ----------------- 4) DROPDOWN (mobil + desktop) ----------------- */
 nav.querySelectorAll(".dropdown > a.cursor-default, .dropdown > a[href='#']").forEach((trigger) => {
   trigger.addEventListener("click", (e) => {
-    // Sadece mobilde tıklamada aç/kapa yapalım
     const isMobile = window.innerWidth < 1200;
-    if (!isMobile) return; // desktop'ta zaten hover ile çalışıyor
+    if (!isMobile) return; // desktop'ta hover ile çalışsın
 
     e.preventDefault();
 
@@ -146,8 +148,14 @@ nav.querySelectorAll(".dropdown > a.cursor-default, .dropdown > a[href='#']").fo
     const submenu = parentLi.querySelector(":scope > ul");
     if (!submenu) return;
 
-    // Sadece UL üzerine class koy
-    submenu.classList.toggle("dropdown-active");
+    // Alt menüyü aç/kapat
+    const isOpen = submenu.classList.toggle("dropdown-active");
+
+    // Oku döndür
+    const arrow = trigger.querySelector(".toggle-dropdown");
+    if (arrow) {
+      arrow.classList.toggle("is-open", isOpen);
+    }
   });
 });
 

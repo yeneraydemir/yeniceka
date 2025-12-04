@@ -10,45 +10,47 @@ document.addEventListener("DOMContentLoaded", () => {
         <img class="img-fluid" src="./assets/img/logo/ceka-bull.png" alt="Ceka Mezbaha Logo">
       </a>
 
-<nav id="navmenu" class="navmenu">
-  <ul>
-    <li><a href="/">Anasayfa</a></li>
-    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+      <!-- NAV -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/">Anasayfa</a></li>
+          <li><a href="hakkimizda.html">Hakkımızda</a></li>
 
-    <li class="dropdown">
-      <a href="kurban-kesim-urunleri.html" class="cursor-default">
-        <span>Ürünler</span>
-        <i class="bi bi-chevron-down toggle-dropdown"></i>
-      </a>
-      <ul>
-        <li><a href="buyukbas-kesim-ekipmanlari.html">Büyükbaş Kesim Ekipmanları</a></li>
-        <li><a href="kucukbas-kesim-ekipmanlari.html">Küçükbaş Kesim Ekipmanları</a></li>
-        <li><a href="kurban-kesim-hijyen-ekipmanlari.html">Kurban Kesim Hijyen Ekipmanları</a></li>
-        <li><a href="kurban-kesim-parcalama-ekipmanlari.html">Kurban Kesim Parçalama Ekipmanları</a></li>
-      </ul>
-    </li>
+            <li class="dropdown">
+              <a href="kurban-kesim-urunleri.html" class="cursor-default">
+                <span>Ürünler</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i>
+              </a>
+              <ul>
+              <li><a href="buyukbas-kesim-ekipmanlari.html">Büyükbaş Kesim Ekipmanları</a></li>
+              <li><a href="kucukbas-kesim-ekipmanlari.html">Küçükbaş Kesim Ekipmanları</a></li>
+              <li><a href="kurban-kesim-hijyen-ekipmanlari.html">Kurban Kesim Hijyen Ekipmanları</a></li>
+              <li><a href="kurban-kesim-parcalama-ekipmanlari.html">Kurban Kesim Parçalama Ekipmanları</a></li>
+            </ul>
+          </li>
 
-    <li><a href="referanslar.html">Referanslar</a></li>
-    <li><a href="galeri.html">Galeri</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="iletisim.html">İletişim</a></li>
-  </ul>
+          <li><a href="referanslar.html">Referanslar</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
 
-  <!-- BAYRAKLAR: hamburger ikonunun SOLUNDA -->
-  <div class="lang-dropdown">
-    <button class="lang-switcher" type="button" data-lang="tr">
-      <img src="./assets/img/logo/turk-bayragi.png" alt="Türkçe" class="lang-flag">
-    </button>
+        <!-- Mobil menü ikonu -->
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Menüyü Aç/Kapat"></i>
+      </nav>
 
-    <button class="lang-switcher lang-inactive" type="button" data-lang="en">
-      <img src="./assets/img/logo/ingiliz-bayragi.png" alt="English" class="lang-flag">
-    </button>
-  </div>
 
-  <!-- Mobil menü ikonu -->
-  <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Menüyü Aç/Kapat"></i>
-</nav>
+      <div class="header-lang d-xl-flex align-items-center btn-getstarted">
+        <button class="lang-btn" aria-label="Dili değiştir">
+          <img src="./assets/img/logo/turk-bayragi.png" alt="Türkçe">
+        </button>
+        <button class="lang-btn" aria-label="Dili değiştir">
+          <img src="./assets/img/logo/turk-bayragi.png" alt="Türkçe">
+        </button>
+      </div>
 
+    </div>
+  </header>
 
     </div>
   </header>`;

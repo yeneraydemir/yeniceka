@@ -78,26 +78,6 @@ color: var(--heading-color);
 }
 
 /* NAV BUTONU (Teklif al, İletişim vb.) */
-.header .btn-getstarted,
-.header .btn-getstarted:focus {
-color: var(--contrast-color);
-background: var(--accent-color); /* #94090D */
-font-size: 14px;
-padding: 8px 20px;
-margin: 0 0 0 24px;
-border-radius: 999px;
-border: 1px solid color-mix(in srgb, var(--accent-color) 60%, transparent);
-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
-transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
-}
-
-.header .btn-getstarted:hover,
-.header .btn-getstarted:focus:hover {
-color: var(--contrast-color);
-background: var(--accent-secondary); /* turuncu kıvılcım */
-transform: translateY(-1px);
-box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
-}
 
 @media (max-width: 1200px) {
 .header {
@@ -1722,56 +1702,40 @@ z-index: 1;
         }
 
 /*  */
-/* Pill container: şimdi ortalıyoruz */
-.header .header-container {
-  border-radius: 999px;
-  padding: 8px 26px;
-  border: 1px solid color-mix(in srgb, var(--border-color) 70%, transparent);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
-  justify-content: center; /* bootstrap'in justify-content-between'ini ezer */
-}
-
-/* LOGO zaten .me-auto ile sola yaslanıyor, ekstra bir şey gerek yok */
-
-/* NAV menü ortada kalsın */
-.header .navmenu {
-  /* nav'ı ortada tutmak için; logo me-auto + bayraklar margin-left:auto ile çalışacak */
-}
-
-/* EN SAĞDA BAYRAK GRUBU */
-.header .lang-dropdown {
+/* Dil seçim alanı */
+.header-lang {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  margin-left: auto;      /* sağa yasla */
+  gap: 0.5rem;          /* Bayraklar arası boşluk */
 }
 
-/* Bayrak butonları */
-.lang-switcher {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: none;
+/* Bayrak butonu */
+.header-lang .lang-btn {
   padding: 0;
-  background-color: #ffffff;
-  cursor: pointer;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
+  border: none;
+  background: transparent;
+  width: 2.6rem;        /* Masaüstü için boyut */
+  height: 2.6rem;
+  border-radius: 50%;   /* Tam yuvarlak */
+  overflow: hidden;     /* Taşan kısımları gizle */
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
-.lang-flag {
+/* Bayrak görseli */
+.header-lang .lang-btn img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
+  object-fit: cover;    /* Görseli dairenin içine kırpar */
   display: block;
 }
 
-/* Pasif görünen dil (siyah-beyaz) */
-.lang-inactive .lang-flag {
-  filter: grayscale(100%);
-  opacity: 0.5;
+/* Küçük ekranlarda biraz küçültelim */
+@media (max-width: 768px) {
+  .header-lang .lang-btn {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
 }

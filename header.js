@@ -10,50 +10,45 @@ document.addEventListener("DOMContentLoaded", () => {
         <img class="img-fluid" src="./assets/img/logo/ceka-bull.png" alt="Ceka Mezbaha Logo">
       </a>
 
-      <!-- NAV -->
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="/">Anasayfa</a></li>
-          <li><a href="hakkimizda.html">Hakkımızda</a></li>
+<nav id="navmenu" class="navmenu">
+  <ul>
+    <li><a href="/">Anasayfa</a></li>
+    <li><a href="hakkimizda.html">Hakkımızda</a></li>
 
-          <!-- Ürünler dropdown -->
-          <li class="dropdown">
-            <a href="#" class="cursor-default">
-              <span>Ürünler</span>
-              <i class="bi bi-chevron-down toggle-dropdown"></i>
-            </a>
-            <ul>
-              <li><a href="buyukbas-kesim-ekipmanlari.html">Büyükbaş Kesim Ekipmanları</a></li>
-              <li><a href="kucukbas-kesim-ekipmanlari.html">Küçükbaş Kesim Ekipmanları</a></li>
-              <li><a href="kurban-kesim-hijyen-ekipmanlari.html">Kurban Kesim Hijyen Ekipmanları</a></li>
-              <li><a href="kurban-kesim-parcalama-ekipmanlari.html">Kurban Kesim Parçalama Ekipmanları</a></li>
-            </ul>
-          </li>
-
-          <li><a href="referanslar.html">Referanslar</a></li>
-          <li><a href="galeri.html">Galeri</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="iletisim.html">İletişim</a></li>
-        </ul>
-
-        <!-- Mobil menü ikonu -->
-        <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Menüyü Aç/Kapat"></i>
-      </nav>
-
-      <!-- SADECE MOBİL: İletişime Geçelim butonu -->
-      <a class="btn-getstarted d-inline-flex align-items-center d-xl-none" href="iletisim.html">
-        İletişime Geçelim
+    <li class="dropdown">
+      <a href="kurban-kesim-urunleri.html" class="cursor-default">
+        <span>Ürünler</span>
+        <i class="bi bi-chevron-down toggle-dropdown"></i>
       </a>
+      <ul>
+        <li><a href="buyukbas-kesim-ekipmanlari.html">Büyükbaş Kesim Ekipmanları</a></li>
+        <li><a href="kucukbas-kesim-ekipmanlari.html">Küçükbaş Kesim Ekipmanları</a></li>
+        <li><a href="kurban-kesim-hijyen-ekipmanlari.html">Kurban Kesim Hijyen Ekipmanları</a></li>
+        <li><a href="kurban-kesim-parcalama-ekipmanlari.html">Kurban Kesim Parçalama Ekipmanları</a></li>
+      </ul>
+    </li>
 
-      <!-- SADECE DESKTOP: Sosyal medya ikonları -->
-      <div class="header-socials d-none d-xl-flex align-items-center gap-3">
-        <a href="https://instagram.com/hesabiniz" class="nav-link p-0" target="_blank" rel="noopener">
-          <i class="bi bi-instagram"></i>
-        </a>
-        <a href="https://facebook.com/hesabiniz" class="nav-link p-0" target="_blank" rel="noopener">
-          <i class="bi bi-facebook"></i>
-        </a>
-      </div>
+    <li><a href="referanslar.html">Referanslar</a></li>
+    <li><a href="galeri.html">Galeri</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="iletisim.html">İletişim</a></li>
+  </ul>
+
+  <!-- BAYRAKLAR: hamburger ikonunun SOLUNDA -->
+  <div class="lang-dropdown">
+    <button class="lang-switcher" type="button" data-lang="tr">
+      <img src="./assets/img/logo/turk-bayragi.png" alt="Türkçe" class="lang-flag">
+    </button>
+
+    <button class="lang-switcher lang-inactive" type="button" data-lang="en">
+      <img src="./assets/img/logo/ingiliz-bayragi.png" alt="English" class="lang-flag">
+    </button>
+  </div>
+
+  <!-- Mobil menü ikonu -->
+  <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Menüyü Aç/Kapat"></i>
+</nav>
+
 
     </div>
   </header>`;

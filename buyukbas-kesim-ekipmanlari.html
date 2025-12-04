@@ -80,10 +80,10 @@
 </section>
  <div class="ksd7m2_section">
         <div class="container-lg">
-            <div class="pqr9k1_header">
+            <!-- <div class="pqr9k1_header">
                 <h1>Mezbaha Ürünleri</h1>
                 <p>Yüksek kaliteli ve güvenilir ürünlerimiz keşfedin</p>
-            </div>
+            </div> -->
 
             <div class="nws3j5_filter-container">
                 <button class="mxc8k4_filter-btn active" onclick="filterProducts('hepsi', event)">
@@ -260,9 +260,6 @@
                             <button class="tzk3p8_btn tzk3p8_btn-primary" onclick="openModal(${product.id})">
                                 <i class="bi bi-eye"></i> Detaylar
                             </button>
-                            <button class="tzk3p8_btn tzk3p8_btn-secondary" onclick="addToCart(${product.id})">
-                                <i class="bi bi-cart-plus"></i>
-                            </button>
                         </div>
                     </div>
                 `;
@@ -289,11 +286,6 @@
             document.getElementById('modalImage').title = product.title;
             document.getElementById('modalDescription').textContent = product.description;
             new bootstrap.Modal(document.getElementById('productModal')).show();
-        }
-
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            alert(`✓ "${product.name}" sepete eklendi!`);
         }
 
         // İlk render

@@ -7,18 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Ceka Mezbahane</span>
+            <span class="sitename">Ceka Mezbaha Sistemleri</span>
           </a>
           <div class="footer-contact pt-3">
-            <p>İstanbul, Türkiye</p>
+            <p>Saray, 5. Cd. NO:19/D, 06378<br>Kahramankazan / Ankara</p>
             <p>Mezbaha ve kesimhane ekipmanlarında hijyenik, dayanıklı çözümler</p>
-            <p class="mt-3"><strong>Telefon:</strong> <span>+90 (000) 000 00 00</span></p>
-            <p><strong>E-posta:</strong> <span><a href="mailto:iletisim@cekamezbaha.com">iletisim@cekamezbaha.com</a></span></p>
+            <p class="mt-3"><strong>Telefon:</strong> <span><a href="tel:+905382374389">+90 538 237 43 89</a></span></p>
+            <p><strong>E-posta:</strong> <span><a href="mailto:info@cekamezbaha.com">info@cekamezbaha.com</a></span></p>
           </div>
           <div class="social-links d-flex mt-4">
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com/cekamezbaha/" aria-label="Instagram - Ceka Mezbaha" title="Instagram" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/cekamezbaha/" aria-label="Facebook - Ceka Mezbaha" title="Facebook" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.linkedin.com/company/ceka-mezbaha/" aria-label="LinkedIn - Ceka Mezbaha" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <h4>Destek</h4>
           <ul>
             <li><a href="iletisim.html">İletişim</a></li>
-            <li><a href="hakkimizda.html">Kalite Politikası</a></li>
-            <li><a href="referanslar.html">Müşteri Hikayeleri</a></li>
+            <li><a href="referanslar.html">Referanslar</a></li>
+            <li><a href="sitemap.xml">Site Haritası</a></li>
           </ul>
         </div>
 
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <div class="container copyright text-center mt-4">      
       <div class="credits">
-        Designed by <a class="text-white" href="https://artegama.com/">Artegama</a>
+        Designed by <a href="https://artegama.com/">Artegama</a>
       </div>
     </div>
 

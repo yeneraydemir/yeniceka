@@ -3,60 +3,53 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ----------------- 1) Insert header ----------------- */
   const headerHTML = `
 <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+  <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <!-- LOGO -->
-      <a href="/en/" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img class="img-fluid" src="../assets/img/logo/ceka-bull.png" alt="Ceka Abattoir Logo">
-        <h5 class="logo-text">CEKA</h5>
-      </a>
+    <!-- LOGO -->
+    <a href="/en/" class="logo d-flex align-items-center me-auto me-xl-0">
+      <img class="img-fluid" src="/assets/img/logo/ceka-bull.png" alt="Ceka Abattoir Logo">
+      <h5 class="logo-text">CEKA</h5>
+    </a>
 
-      <!-- NAV -->
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="/en/">Home</a></li>
-          <li><a href="about-us.html">About Us</a></li>
+    <!-- NAV -->
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/about-us.html">About Us</a></li>
 
-          <!-- Products dropdown -->
-          <li class="dropdown">
-            <a href="sacrificial-slaughter-products.html" class="cursor-default">
-              <span>Products</span>
-              <i class="bi bi-chevron-down toggle-dropdown"></i>
-            </a>
-            <ul>
-              <li><a href="cattle-slaughter-equipment.html">Cattle Slaughter Equipment</a></li>
-              <li><a href="small-ruminant-slaughter-equipment.html">Small Ruminant Equipment</a></li>
-              <li><a href="sacrificial-slaughter-hygiene-equipment.html">Hygiene Equipment</a></li>
-              <li><a href="sacrificial-slaughter-deboning-equipment.html">Deboning & Packing</a></li>
-            </ul>
-          </li>
+        <li class="dropdown">
+          <a href="/en/sacrificial-slaughter-products.html" class="cursor-default">
+            <span>Products</span>
+            <i class="bi bi-chevron-down toggle-dropdown"></i>
+          </a>
+          <ul>
+            <li><a href="/en/cattle-slaughter-equipment.html">Cattle Slaughter Equipment</a></li>
+            <li><a href="/en/small-ruminant-slaughter-equipment.html">Small Ruminant Equipment</a></li>
+            <li><a href="/en/sacrificial-slaughter-hygiene-equipment.html">Hygiene Equipment</a></li>
+            <li><a href="/en/sacrificial-slaughter-deboning-equipment.html">Deboning & Packing</a></li>
+          </ul>
+        </li>
 
-          <li><a href="references.html">References</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <li><a href="/en/references.html">References</a></li>
+        <li><a href="/en/gallery.html">Gallery</a></li>
+        <li><a href="/en/blog.html">Blog</a></li>
+        <li><a href="/en/contact.html">Contact</a></li>
+      </ul>
 
-        <!-- Mobile menu icon -->
-        <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Toggle menu"></i>
-      </nav>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Toggle menu"></i>
+    </nav>
 
-
-      <div class="header-lang d-xl-flex align-items-center btn-getstarted">
-        <button class="lang-btn" aria-label="Switch language to Turkish">
-          <img src="../assets/img/logo/turk-bayragi.png" alt="Turkish Flag">
-        </button>
-        <button class="lang-btn flag-gray" aria-label="You are viewing English">
-          <img src="../assets/img/logo/ingiliz-bayragi.png" alt="UK Flag">
-        </button>
-
-      </div>
-
+    <div class="header-lang d-xl-flex align-items-center btn-getstarted">
+      <button class="lang-btn" aria-label="Switch language to Turkish" onclick="location.href='/'">
+        <img src="/assets/img/logo/turk-bayragi.png" alt="Turkish Flag">
+      </button>
+      <button class="lang-btn flag-gray" aria-label="You are viewing English">
+        <img src="/assets/img/logo/ingiliz-bayragi.png" alt="UK Flag">
+      </button>
     </div>
-  </header>
 
-    </div>
-  </header>`;
+  </div>
+</header>`;
 
   if (!document.querySelector("header#header")) {
     document.body.insertAdjacentHTML("afterbegin", headerHTML);

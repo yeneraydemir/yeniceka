@@ -494,9 +494,9 @@ display: block;
 
 /* Giriş Section */
 .zx9p4m {
-min-height: 90vh;
+min-height: 100vh;
 display: flex;
-padding-top: 144px;
+padding-top: 50px;
 align-items: center;
 justify-content: center;
 position: relative;
@@ -527,6 +527,7 @@ animation: glow 15s ease-in-out infinite;
 text-align: center;
 padding: 60px 20px;
 position: relative;
+/* margin-top: -40px; gerek yok gibi*/
 z-index: 1;
 }
 
@@ -2303,14 +2304,18 @@ background: var(--background-color);
 }
 
 .zmn8x {
-background: var(--surface-color);
-border-radius: 20px;
-overflow: hidden;
-box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-transition: all 0.4s ease;
-text-decoration: none;
-color: inherit;
-display: block;
+  background: var(--surface-color);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+
+  height: 100%;              /* parent’ın yüksekliğini doldur */
+  display: flex;             /* içerik düzgün hizalansın */
+  flex-direction: column;    /* üstten alta */
 }
 
 .zmn8x:hover {

@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       en: "/en/references"
     },
     products: {
-      tr: "/urunler",
+      tr: "/kurban-kesim-urunleri",
       en: "/en/sacrificial-slaughter-products"
     },
     product_cattle: {
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <!-- Ürünler dropdown -->
         <li class="dropdown">
-          <a href="/urunler" class="cursor-default">
+          <a href="/kurban-kesim-urunleri" class="cursor-default">
             <span>Ürünler</span>
             <i class="bi bi-chevron-down toggle-dropdown"></i>
           </a>

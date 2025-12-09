@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       en: "/en/references"
     },
     products: {
-      tr: "/urunler",
+      tr: "/kurban-kesim-urunleri",
       en: "/en/sacrificial-slaughter-products"
     },
     product_cattle: {

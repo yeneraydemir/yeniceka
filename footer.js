@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
+          <a href="/" class="logo d-flex align-items-center">
             <span class="sitename">Ceka Mezbaha Sistemleri</span>
           </a>
           <div class="footer-contact pt-3">
@@ -28,28 +28,28 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Ürünler</h4>
           <ul>
-            <li><a href="buyukbas-kesim-ekipmanlari.html">Büyükbaş Kesim</a></li>
-            <li><a href="kucukbas-kesim-ekipmanlari.html">Küçükbaş Kesim</a></li>
-            <li><a href="kurban-kesim-hijyen-ekipmanlari.html">Hijyen Ekipmanları</a></li>
-            <li><a href="kurban-kesim-parcalama-ekipmanlari.html">Parçalama Ekipmanları</a></li>
+            <li><a href="buyukbas-kesim-ekipmanlari">Büyükbaş Kesim</a></li>
+            <li><a href="kucukbas-kesim-ekipmanlari">Küçükbaş Kesim</a></li>
+            <li><a href="kurban-kesim-hijyen-ekipmanlari">Hijyen Ekipmanları</a></li>
+            <li><a href="kurban-kesim-parcalama-ekipmanlari">Parçalama Ekipmanları</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Kurumsal</h4>
           <ul>
-            <li><a href="hakkimizda.html">Hakkımızda</a></li>
-            <li><a href="referanslar.html">Referanslar</a></li>
-            <li><a href="galeri.html">Galeri</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="hakkimizda">Hakkımızda</a></li>
+            <li><a href="referanslar">Referanslar</a></li>
+            <li><a href="galeri">Galeri</a></li>
+            <li><a href="blog">Blog</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Destek</h4>
           <ul>
-            <li><a href="iletisim.html">İletişim</a></li>
-            <li><a href="referanslar.html">Referanslar</a></li>
+            <li><a href="iletisim">İletişim</a></li>
+            <li><a href="referanslar">Referanslar</a></li>
             <li><a href="sitemap.xml">Site Haritası</a></li>
           </ul>
         </div>

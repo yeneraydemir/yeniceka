@@ -16,44 +16,44 @@ document.addEventListener("DOMContentLoaded", () => {
       en: "/en/"
     },
     about: {
-      tr: "/hakkimizda.html",
-      en: "/en/about-us.html"
+      tr: "/hakkimizda",
+      en: "/en/about-us"
     },
     gallery: {
-      tr: "/galeri.html",
-      en: "/en/gallery.html"
+      tr: "/galeri",
+      en: "/en/gallery"
     },
     blog: {
-      tr: "/blog.html",
-      en: "/en/blog.html"
+      tr: "/blog",
+      en: "/en/blog"
     },
     contact: {
-      tr: "/iletisim.html",
-      en: "/en/contact.html"
+      tr: "/iletisim",
+      en: "/en/contact"
     },
     refs: {
-      tr: "/referanslar.html",
-      en: "/en/references.html"
+      tr: "/referanslar",
+      en: "/en/references"
     },
     products: {
-      tr: "/urunler.html",
-      en: "/en/sacrificial-slaughter-products.html"
+      tr: "/urunler",
+      en: "/en/sacrificial-slaughter-products"
     },
     product_cattle: {
-      tr: "/buyukbas-kesim-ekipmanlari.html",
-      en: "/en/cattle-slaughter-equipment.html"
+      tr: "/buyukbas-kesim-ekipmanlari",
+      en: "/en/cattle-slaughter-equipment"
     },
     product_small: {
-      tr: "/kucukbas-kesim-ekipmanlari.html",
-      en: "/en/small-ruminant-slaughter-equipment.html"
+      tr: "/kucukbas-kesim-ekipmanlari",
+      en: "/en/small-ruminant-slaughter-equipment"
     },
     product_hygiene: {
-      tr: "/kurban-kesim-hijyen-ekipmanlari.html",
-      en: "/en/sacrificial-slaughter-hygiene-equipment.html"
+      tr: "/kurban-kesim-hijyen-ekipmanlari",
+      en: "/en/sacrificial-slaughter-hygiene-equipment"
     },
     product_deboning: {
-      tr: "/kurban-kesim-parcalama-ekipmanlari.html",
-      en: "/en/sacrificial-slaughter-deboning-equipment.html"
+      tr: "/kurban-kesim-parcalama-ekipmanlari",
+      en: "/en/sacrificial-slaughter-deboning-equipment"
     }
   };
 
@@ -128,26 +128,26 @@ document.addEventListener("DOMContentLoaded", () => {
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="/en/">Home</a></li>
-        <li><a href="/en/about-us.html">About Us</a></li>
+        <li><a href="/en/about-us">About Us</a></li>
 
         <!-- Products dropdown -->
         <li class="dropdown">
-          <a href="/en/sacrificial-slaughter-products.html" class="cursor-default">
+          <a href="/en/sacrificial-slaughter-products" class="cursor-default">
             <span>Products</span>
             <i class="bi bi-chevron-down toggle-dropdown"></i>
           </a>
           <ul>
-            <li><a href="/en/cattle-slaughter-equipment.html">Cattle Slaughter Equipment</a></li>
-            <li><a href="/en/small-ruminant-slaughter-equipment.html">Small Ruminant Equipment</a></li>
-            <li><a href="/en/sacrificial-slaughter-hygiene-equipment.html">Hygiene Equipment</a></li>
-            <li><a href="/en/sacrificial-slaughter-deboning-equipment.html">Deboning &amp; Packing</a></li>
+            <li><a href="/en/cattle-slaughter-equipment">Cattle Slaughter Equipment</a></li>
+            <li><a href="/en/small-ruminant-slaughter-equipment">Small Ruminant Equipment</a></li>
+            <li><a href="/en/sacrificial-slaughter-hygiene-equipment">Hygiene Equipment</a></li>
+            <li><a href="/en/sacrificial-slaughter-deboning-equipment">Deboning &amp; Packing</a></li>
           </ul>
         </li>
 
-        <li><a href="/en/references.html">References</a></li>
-        <li><a href="/en/gallery.html">Gallery</a></li>
-        <li><a href="/en/blog.html">Blog</a></li>
-        <li><a href="/en/contact.html">Contact</a></li>
+        <li><a href="/en/references">References</a></li>
+        <li><a href="/en/gallery">Gallery</a></li>
+        <li><a href="/en/blog">Blog</a></li>
+        <li><a href="/en/contact">Contact</a></li>
       </ul>
 
       <!-- Mobile menu icon -->

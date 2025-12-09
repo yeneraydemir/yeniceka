@@ -28,28 +28,28 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Products</h4>
           <ul>
-            <li><a href="cattle-slaughter-equipment.html">Cattle Lines</a></li>
-            <li><a href="small-ruminant-slaughter-equipment.html">Small Ruminants</a></li>
-            <li><a href="sacrificial-slaughter-hygiene-equipment.html">Hygiene</a></li>
-            <li><a href="sacrificial-slaughter-deboning-equipment.html">Deboning</a></li>
+            <li><a href="cattle-slaughter-equipment">Cattle Lines</a></li>
+            <li><a href="small-ruminant-slaughter-equipment">Small Ruminants</a></li>
+            <li><a href="sacrificial-slaughter-hygiene-equipment">Hygiene</a></li>
+            <li><a href="sacrificial-slaughter-deboning-equipment">Deboning</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Company</h4>
           <ul>
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="references.html">References</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about-us">About Us</a></li>
+            <li><a href="references">References</a></li>
+            <li><a href="gallery">Gallery</a></li>
+            <li><a href="blog">Blog</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Support</h4>
           <ul>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="references.html">References</a></li>
+            <li><a href="contact">Contact</a></li>
+            <li><a href="references">References</a></li>
             <li><a href="/sitemap.xml">Sitemap</a></li>
           </ul>
         </div>

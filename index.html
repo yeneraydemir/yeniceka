@@ -48,12 +48,185 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 <link rel="stylesheet" href="./assets/css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": "https://cekamezbaha.com/#organization",
+      "name": "Ceka Mezbaha",
+      "url": "https://cekamezbaha.com/",
+      "description": "Ceka mezbaha sistemleri: büyükbaş ve küçükbaş kesim hatları, kurban parçalama, hijyen bariyerleri, soğuk oda ve otomasyon çözümleri.",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://cekamezbaha.com/#logo",
+        "url": "https://cekamezbaha.com/assets/img/logo/ceka-bull.png",
+        "contentUrl": "https://cekamezbaha.com/assets/img/logo/ceka-bull.png"
+      },
+      "image": { "@id": "https://cekamezbaha.com/#logo" },
+
+      "email": "info@cekamezbaha.com",
+      "telephone": [
+        "+90 538 237 43 89",
+        "+90 507 981 88 42",
+        "+90 532 160 02 46"
+      ],
+
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Saray, 5. Cd. No:19/D",
+        "postalCode": "06378",
+        "addressLocality": "Kahramankazan",
+        "addressRegion": "Ankara",
+        "addressCountry": "TR"
+      },
+
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday"],
+          "opens": "10:00",
+          "closes": "14:00"
+        }
+      ],
+
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "telephone": "+90 538 237 43 89",
+          "email": "info@cekamezbaha.com",
+          "availableLanguage": ["tr-TR","en"]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+90 507 981 88 42",
+          "email": "info@cekamezbaha.com",
+          "availableLanguage": ["tr-TR","en"]
+        }
+      ],
+
+      "areaServed": [
+        { "@type": "Country", "name": "Turkey" }
+      ],
+
+      "knowsAbout": [
+        "Mezbaha sistemleri",
+        "Büyükbaş kesim hatları",
+        "Küçükbaş kesim hatları",
+        "Kurban kesim ekipmanları",
+        "Hijyen bariyerleri",
+        "Soğuk oda çözümleri",
+        "Mezbaha otomasyonu"
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://cekamezbaha.com/#website",
+      "url": "https://cekamezbaha.com/",
+      "name": "Ceka Mezbaha",
+      "publisher": { "@id": "https://cekamezbaha.com/#organization" },
+      "inLanguage": "tr-TR"
+    },
+
+    {
+      "@type": "WebPage",
+      "@id": "https://cekamezbaha.com/#webpage",
+      "url": "https://cekamezbaha.com/",
+      "name": "Mezbaha Sistemleri, Kesim Hatları ve Soğuk Oda Çözümleri | Ceka Mezbaha",
+      "description": "Ceka mezbaha sistemleri: büyükbaş ve küçükbaş kesim hatları, kurban parçalama, hijyen bariyerleri, soğuk oda ve otomasyon çözümleri.",
+      "isPartOf": { "@id": "https://cekamezbaha.com/#website" },
+      "about": { "@id": "https://cekamezbaha.com/#organization" },
+      "primaryImageOfPage": { "@id": "https://cekamezbaha.com/#logo" },
+      "inLanguage": "tr-TR",
+      "breadcrumb": { "@id": "https://cekamezbaha.com/#breadcrumb" },
+      "mainEntity": { "@id": "https://cekamezbaha.com/#services" }
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cekamezbaha.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Anasayfa",
+          "item": "https://cekamezbaha.com/"
+        }
+      ]
+    },
+
+    {
+      "@type": "ItemList",
+      "@id": "https://cekamezbaha.com/#services",
+      "name": "Ürün / Hizmet Kategorileri",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "name": "Büyükbaş Kesim Ekipmanları",
+            "serviceType": "Büyükbaş kesim hattı çözümleri",
+            "provider": { "@id": "https://cekamezbaha.com/#organization" },
+            "url": "https://cekamezbaha.com/buyukbas-kesim-ekipmanlari"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "name": "Küçükbaş Kesim Ekipmanları",
+            "serviceType": "Küçükbaş kesim hattı çözümleri",
+            "provider": { "@id": "https://cekamezbaha.com/#organization" },
+            "url": "https://cekamezbaha.com/kucukbas-kesim-ekipmanlari"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "name": "Kurban Kesim Ürünleri",
+            "serviceType": "Kurban kesim ve parçalama çözümleri",
+            "provider": { "@id": "https://cekamezbaha.com/#organization" },
+            "url": "https://cekamezbaha.com/kurban-kesim-urunleri"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Service",
+            "name": "Kurban Kesim Hijyen Ekipmanları",
+            "serviceType": "Hijyen bariyerleri ve hijyen çözümleri",
+            "provider": { "@id": "https://cekamezbaha.com/#organization" },
+            "url": "https://cekamezbaha.com/kurban-kesim-hijyen-ekipmanlari"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
   </head>
 <body class="theme-light-1">
 <!-- Video Hero Section -->
     <section class="xvn8k">
         <video class="qmp4r" autoplay muted loop playsinline>
-            <source src="./assets/video/boga.mp4" type="video/mp4">
+            <source src="./assets/video/ceka-bogas.mp4" type="video/mp4">
         </video>
         <div class="wzl5t"></div>
         <div class="htn9x">

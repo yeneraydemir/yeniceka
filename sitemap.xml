@@ -5,256 +5,394 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Home -->
   <url>
     <loc>https://cekamezbaha.com/</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:15:00+00:00</lastmod>
     <priority>1.00</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/"/>
   </url>
+
   <url>
     <loc>https://cekamezbaha.com/en/</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>1.00</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/"/>
   </url>
 
-  <!-- About -->
+  <url>
+    <loc>https://cekamezbaha.com/ru/</loc>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/"/>
+  </url>
+
   <url>
     <loc>https://cekamezbaha.com/hakkimizda</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/hakkimizda"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/about-us"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/o-nas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/hakkimizda"/>
   </url>
+
   <url>
     <loc>https://cekamezbaha.com/en/about-us</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/hakkimizda"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/about-us"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/o-nas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/hakkimizda"/>
   </url>
 
-  <!-- Gallery -->
+  <url>
+    <loc>https://cekamezbaha.com/ru/o-nas</loc>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/hakkimizda"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/about-us"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/hakkimizda"/>
+  </url>
+
   <url>
     <loc>https://cekamezbaha.com/galeri</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/galeri"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/gallery"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/galereya"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/galeri"/>
   </url>
+
   <url>
     <loc>https://cekamezbaha.com/en/gallery</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/galeri"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/gallery"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/galereya"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/galeri"/>
   </url>
 
-  <!-- Blog listing -->
+  <url>
+    <loc>https://cekamezbaha.com/ru/galereya</loc>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/galeri"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/gallery"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/galereya"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/galeri"/>
+  </url>
+
   <url>
     <loc>https://cekamezbaha.com/blog</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.70</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/blog"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/blog"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/blog"/>
   </url>
+
   <url>
     <loc>https://cekamezbaha.com/en/blog</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.70</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/blog"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/blog"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/blog"/>
   </url>
 
-  <!-- References -->
   <url>
-    <loc>https://cekamezbaha.com/referanslar</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/referanslar"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/references"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/referanslar"/>
-  </url>
-  <url>
-    <loc>https://cekamezbaha.com/en/references</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/referanslar"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/references"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/referanslar"/>
+    <loc>https://cekamezbaha.com/ru/blog</loc>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/blog"/>
   </url>
 
-  <!-- Contact -->
   <url>
     <loc>https://cekamezbaha.com/iletisim</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.70</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/iletisim"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/kontakty"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/iletisim"/>
   </url>
+
   <url>
     <loc>https://cekamezbaha.com/en/contact</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.70</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/iletisim"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/kontakty"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/iletisim"/>
   </url>
 
-  <!-- Product overview -->
+  <url>
+    <loc>https://cekamezbaha.com/ru/kontakty</loc>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/iletisim"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/kontakty"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/iletisim"/>
+  </url>
+
+  <url>
+    <loc>https://cekamezbaha.com/referanslar</loc>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/referanslar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/references"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/referensy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/referanslar"/>
+  </url>
+
+  <url>
+    <loc>https://cekamezbaha.com/en/references</loc>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/referanslar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/references"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/referensy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/referanslar"/>
+  </url>
+
+  <url>
+    <loc>https://cekamezbaha.com/ru/referensy</loc>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/referanslar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/references"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/referensy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/referanslar"/>
+  </url>
+
   <url>
     <loc>https://cekamezbaha.com/kurban-kesim-urunleri</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.90</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kurban-kesim-urunleri"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/sacrificial-slaughter-products"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/produkty-dlya-zaboya"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kurban-kesim-urunleri"/>
   </url>
+
   <url>
     <loc>https://cekamezbaha.com/en/sacrificial-slaughter-products</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.90</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kurban-kesim-urunleri"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/sacrificial-slaughter-products"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/produkty-dlya-zaboya"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kurban-kesim-urunleri"/>
   </url>
 
-  <!-- Product detail: Cattle -->
+  <url>
+    <loc>https://cekamezbaha.com/ru/produkty-dlya-zaboya</loc>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kurban-kesim-urunleri"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/sacrificial-slaughter-products"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/produkty-dlya-zaboya"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kurban-kesim-urunleri"/>
+  </url>
+
   <url>
     <loc>https://cekamezbaha.com/buyukbas-kesim-ekipmanlari</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/buyukbas-kesim-ekipmanlari"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/cattle-slaughter-equipment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/oborudovanie-dlya-zaboya-krs"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/buyukbas-kesim-ekipmanlari"/>
   </url>
+
   <url>
     <loc>https://cekamezbaha.com/en/cattle-slaughter-equipment</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/buyukbas-kesim-ekipmanlari"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/cattle-slaughter-equipment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/oborudovanie-dlya-zaboya-krs"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/buyukbas-kesim-ekipmanlari"/>
   </url>
 
-  <!-- Product detail: Small ruminant -->
+  <url>
+    <loc>https://cekamezbaha.com/ru/oborudovanie-dlya-zaboya-krs</loc>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/buyukbas-kesim-ekipmanlari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/cattle-slaughter-equipment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/oborudovanie-dlya-zaboya-krs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/buyukbas-kesim-ekipmanlari"/>
+  </url>
+
   <url>
     <loc>https://cekamezbaha.com/kucukbas-kesim-ekipmanlari</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kucukbas-kesim-ekipmanlari"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/small-ruminant-slaughter-equipment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/oborudovanie-dlya-zaboya-mrs"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kucukbas-kesim-ekipmanlari"/>
   </url>
+
   <url>
     <loc>https://cekamezbaha.com/en/small-ruminant-slaughter-equipment</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kucukbas-kesim-ekipmanlari"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/small-ruminant-slaughter-equipment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/oborudovanie-dlya-zaboya-mrs"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kucukbas-kesim-ekipmanlari"/>
   </url>
 
-  <!-- Product detail: Hygiene -->
+  <url>
+    <loc>https://cekamezbaha.com/ru/oborudovanie-dlya-zaboya-mrs</loc>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kucukbas-kesim-ekipmanlari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/small-ruminant-slaughter-equipment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/oborudovanie-dlya-zaboya-mrs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kucukbas-kesim-ekipmanlari"/>
+  </url>
+
   <url>
     <loc>https://cekamezbaha.com/kurban-kesim-hijyen-ekipmanlari</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kurban-kesim-hijyen-ekipmanlari"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/sacrificial-slaughter-hygiene-equipment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/gigiyenicheskoe-oborudovanie"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kurban-kesim-hijyen-ekipmanlari"/>
   </url>
+
   <url>
     <loc>https://cekamezbaha.com/en/sacrificial-slaughter-hygiene-equipment</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kurban-kesim-hijyen-ekipmanlari"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/sacrificial-slaughter-hygiene-equipment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/gigiyenicheskoe-oborudovanie"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kurban-kesim-hijyen-ekipmanlari"/>
   </url>
 
-  <!-- Product detail: Deboning -->
+  <url>
+    <loc>https://cekamezbaha.com/ru/gigiyenicheskoe-oborudovanie</loc>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kurban-kesim-hijyen-ekipmanlari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/sacrificial-slaughter-hygiene-equipment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/gigiyenicheskoe-oborudovanie"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kurban-kesim-hijyen-ekipmanlari"/>
+  </url>
+
   <url>
     <loc>https://cekamezbaha.com/kurban-kesim-parcalama-ekipmanlari</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kurban-kesim-parcalama-ekipmanlari"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/sacrificial-slaughter-deboning-equipment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/obvalka-i-upakovka"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kurban-kesim-parcalama-ekipmanlari"/>
   </url>
+
   <url>
     <loc>https://cekamezbaha.com/en/sacrificial-slaughter-deboning-equipment</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kurban-kesim-parcalama-ekipmanlari"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/sacrificial-slaughter-deboning-equipment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/obvalka-i-upakovka"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kurban-kesim-parcalama-ekipmanlari"/>
   </url>
 
-  <!-- Hygiene barriers / seasonal -->
+  <url>
+    <loc>https://cekamezbaha.com/ru/obvalka-i-upakovka</loc>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kurban-kesim-parcalama-ekipmanlari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/sacrificial-slaughter-deboning-equipment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cekamezbaha.com/ru/obvalka-i-upakovka"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kurban-kesim-parcalama-ekipmanlari"/>
+  </url>
+
   <url>
     <loc>https://cekamezbaha.com/kurban-doneminde-hijyen-bariyerleri</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kurban-doneminde-hijyen-bariyerleri"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/eid-slaughter-hygiene-barriers"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kurban-doneminde-hijyen-bariyerleri"/>
   </url>
+
   <url>
     <loc>https://cekamezbaha.com/en/eid-slaughter-hygiene-barriers</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kurban-doneminde-hijyen-bariyerleri"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/eid-slaughter-hygiene-barriers"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kurban-doneminde-hijyen-bariyerleri"/>
   </url>
 
-  <!-- Flow plan -->
   <url>
     <loc>https://cekamezbaha.com/kurban-kesim-hat-akis-plani</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
-    <priority>0.75</priority>
-    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kurban-kesim-hat-akis-plani"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/sacrificial-slaughter-line-flow-plan"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kurban-kesim-hat-akis-plani"/>
-  </url>
-  <url>
-    <loc>https://cekamezbaha.com/en/sacrificial-slaughter-line-flow-plan</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kurban-kesim-hat-akis-plani"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/sacrificial-slaughter-line-flow-plan"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kurban-kesim-hat-akis-plani"/>
   </url>
 
-  <!-- Explainer: What are slaughterhouse systems -->
+  <url>
+    <loc>https://cekamezbaha.com/en/sacrificial-slaughter-line-flow-plan</loc>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/kurban-kesim-hat-akis-plani"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/sacrificial-slaughter-line-flow-plan"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/kurban-kesim-hat-akis-plani"/>
+  </url>
+
   <url>
     <loc>https://cekamezbaha.com/mezbaha-sistemleri-nedir</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/mezbaha-sistemleri-nedir"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/what-are-slaughterhouse-systems"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/mezbaha-sistemleri-nedir"/>
   </url>
+
   <url>
     <loc>https://cekamezbaha.com/en/what-are-slaughterhouse-systems</loc>
-    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-27T10:16:52+00:00</lastmod>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="tr-TR" href="https://cekamezbaha.com/mezbaha-sistemleri-nedir"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cekamezbaha.com/en/what-are-slaughterhouse-systems"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cekamezbaha.com/mezbaha-sistemleri-nedir"/>
+  </url>
+
+  <url>
+    <loc>https://cekamezbaha.com/dairesel-kesim-makinasi</loc>
+    <lastmod>2026-01-27T09:47:48+00:00</lastmod>
+    <priority>0.60</priority>
   </url>
 
 </urlset>

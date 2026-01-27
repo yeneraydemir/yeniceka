@@ -1,4 +1,4 @@
-// İngilizce header.js  (/en/header.js)
+// İngilizce headers.js  (/en/headers.js)
 document.addEventListener("DOMContentLoaded", () => {
   /* ----------------- 0) LANGUAGE & PAGE MAP ----------------- */
   const CURRENT_LANG = "en";

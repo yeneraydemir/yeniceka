@@ -1,65 +1,44 @@
-// Türkçe header.js
+// headers.js (TR + EN uyumlu, .html'li / .html'siz uyumlu)
+
 document.addEventListener("DOMContentLoaded", () => {
-  /* ----------------- 0) DİL ve SAYFA HARİTASI ----------------- */
-  const CURRENT_LANG = "tr";
+  /* ----------------- 0) DİL ALGILAMA ----------------- */
+  const detectLang = () => {
+    const p = location.pathname;
+    if (p === "/en" || p.startsWith("/en/")) return "en";
+    return "tr";
+  };
+
+  const CURRENT_LANG = detectLang();
 
   const LANGS = {
     tr: { code: "tr", base: "/" },
     en: { code: "en", base: "/en/" }
-    // ileride: de: { code: "de", base: "/de/" } vb.
   };
 
   const LANG_CODES = Object.keys(LANGS);
 
-  // Tek bir "pageKey" üzerinden tüm dillerin URL'lerini yönetiyoruz
+  /* ----------------- 1) SAYFA HARİTASI ----------------- */
+  // Tek bir pageKey üzerinden TR/EN URL yönetimi
   const PAGE_MAP = {
-    home: {
-      tr: "/",
-      en: "/en/"
-    },
-    about: {
-      tr: "/hakkimizda",
-      en: "/en/about-us"
-    },
-    gallery: {
-      tr: "/galeri",
-      en: "/en/gallery"
-    },
-    blog: {
-      tr: "/blog",
-      en: "/en/blog"
-    },
-    contact: {
-      tr: "/iletisim",
-      en: "/en/contact"
-    },
-    refs: {
-      tr: "/referanslar",
-      en: "/en/references"
-    },
-    products: {
-      tr: "/kurban-kesim-urunleri",
-      en: "/en/sacrificial-slaughter-products"
-    },
-    product_cattle: {
-      tr: "/buyukbas-kesim-ekipmanlari",
-      en: "/en/cattle-slaughter-equipment"
-    },
-    product_small: {
-      tr: "/kucukbas-kesim-ekipmanlari",
-      en: "/en/small-ruminant-slaughter-equipment"
-    },
-    product_hygiene: {
-      tr: "/kurban-kesim-hijyen-ekipmanlari",
-      en: "/en/sacrificial-slaughter-hygiene-equipment"
-    },
-    product_deboning: {
-      tr: "/kurban-kesim-parcalama-ekipmanlari",
-      en: "/en/sacrificial-slaughter-deboning-equipment"
-    }
+    home: { tr: "/", en: "/en/" },
+
+    about: { tr: "/hakkimizda", en: "/en/about-us" },
+    gallery: { tr: "/galeri", en: "/en/gallery" },
+    blog: { tr: "/blog", en: "/en/blog" },
+    contact: { tr: "/iletisim", en: "/en/contact" },
+    refs: { tr: "/referanslar", en: "/en/references" },
+
+    // ürünler ana sayfası
+    products: { tr: "/kurban-kesim-urunleri", en: "/en/sacrificial-slaughter-products" },
+
+    // ürün alt sayfaları
+    product_cattle: { tr: "/buyukbas-kesim-ekipmanlari", en: "/en/cattle-slaughter-equipment" },
+    product_small: { tr: "/kucukbas-kesim-ekipmanlari", en: "/en/small-ruminant-slaughter-equipment" },
+    product_hygiene: { tr: "/kurban-kesim-hijyen-ekipmanlari", en: "/en/sacrificial-slaughter-hygiene-equipment" },
+    product_deboning: { tr: "/kurban-kesim-parcalama-ekipmanlari", en: "/en/sacrificial-slaughter-deboning-equipment" }
   };
 
-  // slug (dosya adı) -> yukarıdaki PAGE_MAP key'i
+  // slug (dosya adı) -> PAGE_MAP key
   const SLUG_TO_KEY = {
     // ana sayfa
     index: "home",
@@ -79,6 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
     referanslar: "refs",
     references: "refs",
 
+    // ürünler ana sayfası (KRİTİK: eksikti)
+    "kurban-kesim-urunleri": "products",
     urunler: "products",
     "sacrificial-slaughter-products": "products",
 
@@ -96,21 +77,23 @@ document.addEventListener("DOMContentLoaded", () => {
     "sacrificial-slaughter-deboning-equipment": "product_deboning"
   };
 
-  // Path'ten slug üret (galeri, about-us, index vs.)
+  /* ----------------- 2) PATH -> SLUG ----------------- */
   const toSlug = (pathOrHref) => {
     try {
       const u = new URL(pathOrHref, location.href);
       const parts = u.pathname.split("/").filter(Boolean);
       let last = parts.pop();
 
-      // /, /tr/, /en/ vb.
+      // /, /en/, /tr/ vb.
       if (!last) return "index";
       if (LANG_CODES.includes(last)) return "index";
 
       // /index.html, /en/index.html vb.
       if (/^index\.html?$/i.test(last)) return "index";
 
+      // .html / .htm kaldır
       last = last.replace(/\.html?$/i, "");
+
       return last || "index";
     } catch {
       const raw = String(pathOrHref).split("#")[0].split("?")[0];
@@ -123,13 +106,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const CURRENT_SLUG = toSlug(location.pathname);
   const isHome = CURRENT_SLUG === "index";
 
-  /* ----------------- 1) HEADER HTML EKLE ----------------- */
+  const urlFor = (pageKey, lang = CURRENT_LANG) => {
+    const map = PAGE_MAP[pageKey];
+    if (map && map[lang]) return map[lang];
+    return LANGS[lang]?.base || "/";
+  };
+
+  const t = (trText, enText) => (CURRENT_LANG === "en" ? enText : trText);
+
+  /* ----------------- 3) HEADER HTML EKLE ----------------- */
   const headerHTML = `
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
     <!-- LOGO -->
-    <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
+    <a href="${urlFor("home")}" class="logo d-flex align-items-center me-auto me-xl-0">
       <img class="img-fluid" src="/assets/img/logo/ceka-bull.png" alt="Ceka Mezbaha Logo">
       <h5 class="logo-text">CEKA</h5>
     </a>
@@ -137,29 +128,31 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- NAV -->
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="/">Anasayfa</a></li>
-        <li><a href="/hakkimizda">Hakkımızda</a></li>
+        <li><a href="${urlFor("home")}">${t("Anasayfa", "Home")}</a></li>
+        <li><a href="${urlFor("about")}">${t("Hakkımızda", "About")}</a></li>
 
         <!-- Ürünler dropdown -->
         <li class="dropdown">
-          <a href="/kurban-kesim-urunleri" class="cursor-default">
-            <span>Ürünler</span>
+          <a href="${urlFor("products")}" class="cursor-default">
+            <span>${t("Ürünler", "Products")}</span>
             <i class="bi bi-chevron-down toggle-dropdown"></i>
           </a>
           <ul>
-            <li><a href="/buyukbas-kesim-ekipmanlari">Büyükbaş Kesim Ekipmanları</a></li>
-            <li><a href="/kucukbas-kesim-ekipmanlari">Küçükbaş Kesim Ekipmanları</a></li>
-            <li><a href="/kurban-kesim-hijyen-ekipmanlari">Hijyen Ekipmanları</a></li>
-            <li><a href="/kurban-kesim-parcalama-ekipmanlari">Parçalama &amp; Paketleme</a></li>
+            <li><a href="${urlFor("product_cattle")}">${t("Büyükbaş Kesim Ekipmanları", "Cattle Slaughter Equipment")}</a></li>
+            <li><a href="${urlFor("product_small")}">${t("Küçükbaş Kesim Ekipmanları", "Small Ruminant Equipment")}</a></li>
+            <li><a href="${urlFor("product_hygiene")}">${t("Hijyen Ekipmanları", "Hygiene Equipment")}</a></li>
+            <li><a href="${urlFor("product_deboning")}">${t("Parçalama &amp; Paketleme", "Deboning &amp; Packaging")}</a></li>
           </ul>
         </li>
-        <li><a href="/referanslar">Referanslar</a></li>
-        <li><a href="/galeri">Galeri</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/iletisim">İletişim</a></li>
+
+        <li><a href="${urlFor("refs")}">${t("Referanslar", "References")}</a></li>
+        <li><a href="${urlFor("gallery")}">${t("Galeri", "Gallery")}</a></li>
+        <li><a href="${urlFor("blog")}">Blog</a></li>
+        <li><a href="${urlFor("contact")}">${t("İletişim", "Contact")}</a></li>
       </ul>
+
       <!-- Mobil menü ikonu -->
-      <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Menüyü aç"></i>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="${t("Menüyü aç", "Open menu")}"></i>
     </nav>
 
     <!-- DİL BUTONLARI -->
@@ -167,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <button class="lang-btn" data-lang="tr" aria-label="Türkçe">
         <img src="/assets/img/logo/turk-bayragi.png" alt="Türkçe">
       </button>
-      <button class="lang-btn flag-gray" data-lang="en" aria-label="English">
+      <button class="lang-btn" data-lang="en" aria-label="English">
         <img src="/assets/img/logo/ingiliz-bayragi.png" alt="English">
       </button>
     </div>
@@ -179,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.insertAdjacentHTML("afterbegin", headerHTML);
   }
 
-  /* ----------------- 2) SEÇİCİLER ----------------- */
+  /* ----------------- 4) SEÇİCİLER ----------------- */
   const nav = document.querySelector("#navmenu");
   if (!nav) return;
 
@@ -195,10 +188,11 @@ document.addEventListener("DOMContentLoaded", () => {
     "[data-mobile-toggle]"
   ].join(",");
 
-  const getAllToggles = () =>
-    Array.from(document.querySelectorAll(TOGGLE_SELECTOR));
+  const getAllToggles = () => Array.from(document.querySelectorAll(TOGGLE_SELECTOR));
 
-  /* ----------------- 3) MOBİL MENÜ ----------------- */
+  /* ----------------- 5) MOBİL MENÜ ----------------- */
+  const isMobile = () => window.innerWidth < 1200;
+
   const setMobileIcon = (open) => {
     getAllToggles().forEach((btn) => {
       const iconEl = btn.matches("i.bi")
@@ -209,24 +203,38 @@ document.addEventListener("DOMContentLoaded", () => {
       iconEl.classList.add(open ? "bi-x" : "bi-list");
 
       btn.setAttribute("aria-expanded", String(open));
-      btn.setAttribute("aria-label", open ? "Menüyü kapat" : "Menüyü aç");
+      btn.setAttribute("aria-label", open ? t("Menüyü kapat", "Close menu") : t("Menüyü aç", "Open menu"));
       btn.setAttribute("role", "button");
       if (!btn.hasAttribute("tabindex")) btn.setAttribute("tabindex", "0");
     });
   };
 
-  const toggleMenu = (willOpen) => {
-    nav.classList.toggle("navmenu-open", willOpen);
-    document.body.classList.toggle("mobile-nav-active", willOpen);
-    setMobileIcon(willOpen);
+  const openMenu = () => {
+    nav.classList.add("navmenu-open");
+    document.body.classList.add("mobile-nav-active");
+    setMobileIcon(true);
+  };
+
+  const closeMenu = () => {
+    nav.classList.remove("navmenu-open");
+    document.body.classList.remove("mobile-nav-active");
+    setMobileIcon(false);
+
+    // mobilde açılmış dropdownları da kapat
+    nav.querySelectorAll("li.dropdown.dropdown-active").forEach((li) => li.classList.remove("dropdown-active"));
+    nav.querySelectorAll("li.dropdown > ul.dropdown-active").forEach((ul) => ul.classList.remove("dropdown-active"));
+  };
+
+  const toggleMenu = () => {
+    const open = nav.classList.contains("navmenu-open");
+    open ? closeMenu() : openMenu();
   };
 
   document.addEventListener("click", (e) => {
     const btn = e.target.closest(TOGGLE_SELECTOR);
     if (!btn) return;
     e.preventDefault();
-    const willOpen = !nav.classList.contains("navmenu-open");
-    toggleMenu(willOpen);
+    toggleMenu();
   });
 
   document.addEventListener("keydown", (e) => {
@@ -234,79 +242,83 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!btn) return;
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      const willOpen = !nav.classList.contains("navmenu-open");
-      toggleMenu(willOpen);
+      toggleMenu();
     }
   });
 
-  const mo = new MutationObserver(() => {
+  // menü açıkken, nav dışına tıklayınca kapat
+  document.addEventListener("click", (e) => {
+    if (!nav.classList.contains("navmenu-open")) return;
+    if (!isMobile()) return;
+
+    const insideNav = e.target.closest("#navmenu");
+    const insideHeader = e.target.closest("#header");
+    const isToggle = e.target.closest(TOGGLE_SELECTOR);
+
+    if (!insideNav && insideHeader && !isToggle) {
+      // header alanında ama menü dışına tıkladı -> kapat
+      closeMenu();
+    }
+  });
+
+  // desktop'a geçince menüyü kapat
+  window.addEventListener("resize", () => {
+    if (!isMobile() && nav.classList.contains("navmenu-open")) closeMenu();
     setMobileIcon(nav.classList.contains("navmenu-open"));
   });
-  mo.observe(document.body, { childList: true, subtree: true });
 
   setMobileIcon(nav.classList.contains("navmenu-open"));
 
-  /* ----------------- 4) DROPDOWN (mobil + desktop) ----------------- */
-  nav
-    .querySelectorAll(".dropdown > a.cursor-default, .dropdown > a[href='#']")
-    .forEach((trigger) => {
-      trigger.addEventListener("click", (e) => {
-        const isMobile = window.innerWidth < 1200;
-        if (!isMobile) return;
+  /* ----------------- 6) DROPDOWN (mobil) ----------------- */
+  nav.querySelectorAll(".dropdown > a.cursor-default, .dropdown > a[href='#']").forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      if (!isMobile()) return;
 
-        e.preventDefault();
+      e.preventDefault();
 
-        const parentLi = trigger.closest("li.dropdown");
-        if (!parentLi) return;
+      const parentLi = trigger.closest("li.dropdown");
+      if (!parentLi) return;
 
-        const submenu = parentLi.querySelector(":scope > ul");
-        if (!submenu) return;
+      const submenu = parentLi.querySelector(":scope > ul");
+      if (!submenu) return;
 
-        const isOpen = submenu.classList.toggle("dropdown-active");
+      const willOpen = !parentLi.classList.contains("dropdown-active");
 
-        const arrow = trigger.querySelector(".toggle-dropdown");
-        if (arrow) {
-          arrow.classList.toggle("is-open", isOpen);
-        }
-      });
+      parentLi.classList.toggle("dropdown-active", willOpen);
+      submenu.classList.toggle("dropdown-active", willOpen);
+
+      const arrow = trigger.querySelector(".toggle-dropdown");
+      if (arrow) arrow.classList.toggle("is-open", willOpen);
     });
+  });
 
-  /* ----------------- 5) NAV: aktif link (path'e göre) ----------------- */
+  /* ----------------- 7) NAV: aktif link (path'e göre) ----------------- */
   function setActiveByPath() {
     navLinks.forEach((a) => {
       const href = a.getAttribute("href") || "";
       if (href.startsWith("#")) return;
 
-      let linkSlug;
-      if (href === "/" || href === "/en/") {
-        linkSlug = "index";
-      } else {
-        linkSlug = toSlug(href);
-      }
+      const linkSlug = (href === "/" || href === "/en/") ? "index" : toSlug(href);
 
-      const isActive =
-        (linkSlug === "index" && isHome) || linkSlug === CURRENT_SLUG;
-
+      const isActive = (linkSlug === "index" && isHome) || linkSlug === CURRENT_SLUG;
       a.classList.toggle("active", !!isActive);
 
       if (isActive) {
         const parentDrop = a.closest("li.dropdown");
         if (parentDrop) {
           parentDrop.classList.add("dropdown-active");
-          const upper = parentDrop.closest("li.dropdown");
-          if (upper) upper.classList.add("dropdown-active");
+          const submenu = parentDrop.querySelector(":scope > ul");
+          if (submenu) submenu.classList.add("dropdown-active");
         }
       }
     });
   }
 
-  /* ----------------- 6) SCROLLSPY (#anchor linkler) ----------------- */
+  /* ----------------- 8) SCROLLSPY (#anchor linkler) ----------------- */
   const HEADER_OFFSET = 100;
 
   function setActiveByScroll() {
-    const anchorLinks = Array.from(navLinks).filter((a) =>
-      (a.getAttribute("href") || "").startsWith("#")
-    );
+    const anchorLinks = Array.from(navLinks).filter((a) => (a.getAttribute("href") || "").startsWith("#"));
     if (anchorLinks.length === 0) return;
 
     let found = false;
@@ -317,21 +329,27 @@ document.addEventListener("DOMContentLoaded", () => {
       const bottom = top + sec.offsetHeight;
       if (y >= top && y < bottom) {
         const id = sec.id;
-        anchorLinks.forEach((a) => {
-          a.classList.toggle("active", a.getAttribute("href") === `#${id}`);
-        });
+        anchorLinks.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${id}`));
         found = true;
       }
     });
 
-    if (!found) {
-      anchorLinks.forEach((a) => a.classList.remove("active"));
-    }
+    if (!found) anchorLinks.forEach((a) => a.classList.remove("active"));
   }
 
-  /* ----------------- 7) Anchor tıklaması ----------------- */
+  /* ----------------- 9) Anchor tıklaması ----------------- */
   navLinks.forEach((a) => {
     const href = a.getAttribute("href") || "";
+
+    // mobil menü açıkken normal linke tıklanınca kapat
+    a.addEventListener("click", () => {
+      if (isMobile() && nav.classList.contains("navmenu-open")) {
+        // dropdown trigger değilse kapat
+        const isDropdownTrigger = !!a.closest("li.dropdown") && a.classList.contains("cursor-default");
+        if (!isDropdownTrigger) closeMenu();
+      }
+    });
+
     if (!href.startsWith("#")) return;
 
     a.addEventListener("click", (e) => {
@@ -339,9 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!target) return;
       e.preventDefault();
 
-      if (nav.classList.contains("navmenu-open")) {
-        toggleMenu(false);
-      }
+      if (nav.classList.contains("navmenu-open")) closeMenu();
 
       target.scrollIntoView({ behavior: "smooth", block: "start" });
       navLinks.forEach((l) => l.classList.remove("active"));
@@ -349,18 +365,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ----------------- 8) DİL DEĞİŞTİRME ----------------- */
+  /* ----------------- 10) DİL DEĞİŞTİRME ----------------- */
   function getLangUrl(targetLang) {
     const pageKey = SLUG_TO_KEY[CURRENT_SLUG] || "home";
 
     const map = PAGE_MAP[pageKey];
     if (map && map[targetLang]) return map[targetLang];
 
-    const homeMap = PAGE_MAP.home;
-    if (homeMap && homeMap[targetLang]) return homeMap[targetLang];
-
-    const langCfg = LANGS[targetLang];
-    return langCfg?.base || "/";
+    // fallback
+    return LANGS[targetLang]?.base || "/";
   }
 
   function setupLanguageSwitcher() {
@@ -379,21 +392,21 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.addEventListener("click", (e) => {
         if (lang === CURRENT_LANG) return;
         e.preventDefault();
-        const targetUrl = getLangUrl(lang);
-        window.location.href = targetUrl;
+        window.location.href = getLangUrl(lang);
       });
     });
   }
 
-  /* ----------------- 9) INIT ----------------- */
+  /* ----------------- 11) INIT ----------------- */
   setActiveByPath();
   setActiveByScroll();
   setupLanguageSwitcher();
 
   window.addEventListener("scroll", setActiveByScroll, { passive: true });
+
   window.addEventListener("popstate", () => {
     setActiveByPath();
     setActiveByScroll();
-    if (nav.classList.contains("navmenu-open")) toggleMenu(false);
+    if (nav.classList.contains("navmenu-open")) closeMenu();
   });
 });

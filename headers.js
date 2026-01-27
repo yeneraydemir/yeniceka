@@ -1,99 +1,139 @@
-// headers.js (TR + EN uyumlu, .html'li / .html'siz uyumlu)
+// header.js (TR + EN + RU uyumlu, .html'li / .html'siz uyumlu)
 
 document.addEventListener("DOMContentLoaded", () => {
-  /* ----------------- 0) DİL ALGILAMA ----------------- */
+  /* ----------------- 0) DİL ve SAYFA HARİTASI ----------------- */
+  const LANGS = {
+    tr: { code: "tr", base: "/" },
+    en: { code: "en", base: "/en/" },
+    ru: { code: "ru", base: "/ru/" }
+  };
+
+  const LANG_CODES = Object.keys(LANGS);
+
+  // URL'den dili otomatik algıla: /en/... , /ru/... yoksa tr
   const detectLang = () => {
-    const p = location.pathname;
-    if (p === "/en" || p.startsWith("/en/")) return "en";
+    const parts = location.pathname.split("/").filter(Boolean);
+    const first = parts[0];
+    if (first && LANG_CODES.includes(first)) return first;
     return "tr";
   };
 
   const CURRENT_LANG = detectLang();
 
-  const LANGS = {
-    tr: { code: "tr", base: "/" },
-    en: { code: "en", base: "/en/" }
-  };
-
-  const LANG_CODES = Object.keys(LANGS);
-
-  /* ----------------- 1) SAYFA HARİTASI ----------------- */
-  // Tek bir pageKey üzerinden TR/EN URL yönetimi
+  // Tek bir "pageKey" üzerinden tüm dillerin URL'lerini yönetiyoruz
   const PAGE_MAP = {
-    home: { tr: "/", en: "/en/" },
-
-    about: { tr: "/hakkimizda", en: "/en/about-us" },
-    gallery: { tr: "/galeri", en: "/en/gallery" },
-    blog: { tr: "/blog", en: "/en/blog" },
-    contact: { tr: "/iletisim", en: "/en/contact" },
-    refs: { tr: "/referanslar", en: "/en/references" },
-
-    // ürünler ana sayfası
-    products: { tr: "/kurban-kesim-urunleri", en: "/en/sacrificial-slaughter-products" },
-
-    // ürün alt sayfaları
-    product_cattle: { tr: "/buyukbas-kesim-ekipmanlari", en: "/en/cattle-slaughter-equipment" },
-    product_small: { tr: "/kucukbas-kesim-ekipmanlari", en: "/en/small-ruminant-slaughter-equipment" },
-    product_hygiene: { tr: "/kurban-kesim-hijyen-ekipmanlari", en: "/en/sacrificial-slaughter-hygiene-equipment" },
-    product_deboning: { tr: "/kurban-kesim-parcalama-ekipmanlari", en: "/en/sacrificial-slaughter-deboning-equipment" }
+    home: {
+      tr: "/",
+      en: "/en/",
+      ru: "/ru/"
+    },
+    about: {
+      tr: "/hakkimizda",
+      en: "/en/about-us",
+      ru: "/ru/o-nas"
+    },
+    gallery: {
+      tr: "/galeri",
+      en: "/en/gallery",
+      ru: "/ru/galereya"
+    },
+    blog: {
+      tr: "/blog",
+      en: "/en/blog",
+      ru: "/ru/blog"
+    },
+    contact: {
+      tr: "/iletisim",
+      en: "/en/contact",
+      ru: "/ru/kontakty"
+    },
+    refs: {
+      tr: "/referanslar",
+      en: "/en/references",
+      ru: "/ru/referensy"
+    },
+    products: {
+      tr: "/kurban-kesim-urunleri",
+      en: "/en/sacrificial-slaughter-products",
+      ru: "/ru/produkty-dlya-zaboya"
+    },
+    product_cattle: {
+      tr: "/buyukbas-kesim-ekipmanlari",
+      en: "/en/cattle-slaughter-equipment",
+      ru: "/ru/oborudovanie-dlya-zaboya-krs"
+    },
+    product_small: {
+      tr: "/kucukbas-kesim-ekipmanlari",
+      en: "/en/small-ruminant-slaughter-equipment",
+      ru: "/ru/oborudovanie-dlya-zaboya-mrs"
+    },
+    product_hygiene: {
+      tr: "/kurban-kesim-hijyen-ekipmanlari",
+      en: "/en/sacrificial-slaughter-hygiene-equipment",
+      ru: "/ru/gigiyenicheskoe-oborudovanie"
+    },
+    product_deboning: {
+      tr: "/kurban-kesim-parcalama-ekipmanlari",
+      en: "/en/sacrificial-slaughter-deboning-equipment",
+      ru: "/ru/obvalka-i-upakovka"
+    }
   };
 
-  // slug (dosya adı) -> PAGE_MAP key
+  // slug (dosya adı) -> PAGE_MAP key'i
   const SLUG_TO_KEY = {
     // ana sayfa
     index: "home",
 
-    // ortak sayfalar
+    // TR
     hakkimizda: "about",
-    "about-us": "about",
-
     galeri: "gallery",
-    gallery: "gallery",
-
     blog: "blog",
-
     iletisim: "contact",
-    contact: "contact",
-
     referanslar: "refs",
-    references: "refs",
-
-    // ürünler ana sayfası (KRİTİK: eksikti)
     "kurban-kesim-urunleri": "products",
-    urunler: "products",
-    "sacrificial-slaughter-products": "products",
-
-    // ürün alt sayfaları
     "buyukbas-kesim-ekipmanlari": "product_cattle",
-    "cattle-slaughter-equipment": "product_cattle",
-
     "kucukbas-kesim-ekipmanlari": "product_small",
-    "small-ruminant-slaughter-equipment": "product_small",
-
     "kurban-kesim-hijyen-ekipmanlari": "product_hygiene",
-    "sacrificial-slaughter-hygiene-equipment": "product_hygiene",
-
     "kurban-kesim-parcalama-ekipmanlari": "product_deboning",
-    "sacrificial-slaughter-deboning-equipment": "product_deboning"
+
+    // EN
+    "about-us": "about",
+    gallery: "gallery",
+    contact: "contact",
+    references: "refs",
+    "sacrificial-slaughter-products": "products",
+    "cattle-slaughter-equipment": "product_cattle",
+    "small-ruminant-slaughter-equipment": "product_small",
+    "sacrificial-slaughter-hygiene-equipment": "product_hygiene",
+    "sacrificial-slaughter-deboning-equipment": "product_deboning",
+
+    // RU (örnek transliterasyon)
+    "o-nas": "about",
+    "galereya": "gallery",
+    "kontakty": "contact",
+    "referensy": "refs",
+    "produkty-dlya-zaboya": "products",
+    "oborudovanie-dlya-zaboya-krs": "product_cattle",
+    "oborudovanie-dlya-zaboya-mrs": "product_small",
+    "gigiyenicheskoe-oborudovanie": "product_hygiene",
+    "obvalka-i-upakovka": "product_deboning"
   };
 
-  /* ----------------- 2) PATH -> SLUG ----------------- */
+  /* ----------------- 1) Path'ten slug üret ----------------- */
   const toSlug = (pathOrHref) => {
     try {
       const u = new URL(pathOrHref, location.href);
       const parts = u.pathname.split("/").filter(Boolean);
       let last = parts.pop();
 
-      // /, /en/, /tr/ vb.
+      // /, /en/, /ru/ vb.
       if (!last) return "index";
       if (LANG_CODES.includes(last)) return "index";
 
       // /index.html, /en/index.html vb.
       if (/^index\.html?$/i.test(last)) return "index";
 
-      // .html / .htm kaldır
       last = last.replace(/\.html?$/i, "");
-
       return last || "index";
     } catch {
       const raw = String(pathOrHref).split("#")[0].split("?")[0];
@@ -112,9 +152,14 @@ document.addEventListener("DOMContentLoaded", () => {
     return LANGS[lang]?.base || "/";
   };
 
-  const t = (trText, enText) => (CURRENT_LANG === "en" ? enText : trText);
+  // 3 dil çeviri yardımcı fonksiyonu
+  const t = (trText, enText, ruText) => {
+    if (CURRENT_LANG === "en") return enText ?? trText;
+    if (CURRENT_LANG === "ru") return ruText ?? trText;
+    return trText;
+  };
 
-  /* ----------------- 3) HEADER HTML EKLE ----------------- */
+  /* ----------------- 2) HEADER HTML EKLE ----------------- */
   const headerHTML = `
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
@@ -128,31 +173,31 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- NAV -->
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="${urlFor("home")}">${t("Anasayfa", "Home")}</a></li>
-        <li><a href="${urlFor("about")}">${t("Hakkımızda", "About")}</a></li>
+        <li><a href="${urlFor("home")}">${t("Anasayfa", "Home", "Главная")}</a></li>
+        <li><a href="${urlFor("about")}">${t("Hakkımızda", "About", "О нас")}</a></li>
 
         <!-- Ürünler dropdown -->
         <li class="dropdown">
           <a href="${urlFor("products")}" class="cursor-default">
-            <span>${t("Ürünler", "Products")}</span>
+            <span>${t("Ürünler", "Products", "Продукты")}</span>
             <i class="bi bi-chevron-down toggle-dropdown"></i>
           </a>
           <ul>
-            <li><a href="${urlFor("product_cattle")}">${t("Büyükbaş Kesim Ekipmanları", "Cattle Slaughter Equipment")}</a></li>
-            <li><a href="${urlFor("product_small")}">${t("Küçükbaş Kesim Ekipmanları", "Small Ruminant Equipment")}</a></li>
-            <li><a href="${urlFor("product_hygiene")}">${t("Hijyen Ekipmanları", "Hygiene Equipment")}</a></li>
-            <li><a href="${urlFor("product_deboning")}">${t("Parçalama &amp; Paketleme", "Deboning &amp; Packaging")}</a></li>
+            <li><a href="${urlFor("product_cattle")}">${t("Büyükbaş Kesim Ekipmanları", "Cattle Equipment", "Оборудование для КРС")}</a></li>
+            <li><a href="${urlFor("product_small")}">${t("Küçükbaş Kesim Ekipmanları", "Small Ruminant Equipment", "Оборудование для МРС")}</a></li>
+            <li><a href="${urlFor("product_hygiene")}">${t("Hijyen Ekipmanları", "Hygiene Equipment", "Гигиеническое оборудование")}</a></li>
+            <li><a href="${urlFor("product_deboning")}">${t("Parçalama &amp; Paketleme", "Deboning &amp; Packaging", "Обвалка и упаковка")}</a></li>
           </ul>
         </li>
 
-        <li><a href="${urlFor("refs")}">${t("Referanslar", "References")}</a></li>
-        <li><a href="${urlFor("gallery")}">${t("Galeri", "Gallery")}</a></li>
+        <li><a href="${urlFor("refs")}">${t("Referanslar", "References", "Референсы")}</a></li>
+        <li><a href="${urlFor("gallery")}">${t("Galeri", "Gallery", "Галерея")}</a></li>
         <li><a href="${urlFor("blog")}">Blog</a></li>
-        <li><a href="${urlFor("contact")}">${t("İletişim", "Contact")}</a></li>
+        <li><a href="${urlFor("contact")}">${t("İletişim", "Contact", "Контакты")}</a></li>
       </ul>
 
       <!-- Mobil menü ikonu -->
-      <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="${t("Menüyü aç", "Open menu")}"></i>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="${t("Menüyü aç", "Open menu", "Открыть меню")}"></i>
     </nav>
 
     <!-- DİL BUTONLARI -->
@@ -163,6 +208,9 @@ document.addEventListener("DOMContentLoaded", () => {
       <button class="lang-btn" data-lang="en" aria-label="English">
         <img src="/assets/img/logo/ingiliz-bayragi.png" alt="English">
       </button>
+      <button class="lang-btn" data-lang="ru" aria-label="Русский">
+        <img src="/assets/img/logo/rus-bayragi.png" alt="Русский">
+      </button>
     </div>
 
   </div>
@@ -172,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.insertAdjacentHTML("afterbegin", headerHTML);
   }
 
-  /* ----------------- 4) SEÇİCİLER ----------------- */
+  /* ----------------- 3) SEÇİCİLER ----------------- */
   const nav = document.querySelector("#navmenu");
   if (!nav) return;
 
@@ -189,10 +237,9 @@ document.addEventListener("DOMContentLoaded", () => {
   ].join(",");
 
   const getAllToggles = () => Array.from(document.querySelectorAll(TOGGLE_SELECTOR));
-
-  /* ----------------- 5) MOBİL MENÜ ----------------- */
   const isMobile = () => window.innerWidth < 1200;
 
+  /* ----------------- 4) MOBİL MENÜ ----------------- */
   const setMobileIcon = (open) => {
     getAllToggles().forEach((btn) => {
       const iconEl = btn.matches("i.bi")
@@ -203,7 +250,10 @@ document.addEventListener("DOMContentLoaded", () => {
       iconEl.classList.add(open ? "bi-x" : "bi-list");
 
       btn.setAttribute("aria-expanded", String(open));
-      btn.setAttribute("aria-label", open ? t("Menüyü kapat", "Close menu") : t("Menüyü aç", "Open menu"));
+      btn.setAttribute(
+        "aria-label",
+        open ? t("Menüyü kapat", "Close menu", "Закрыть меню") : t("Menüyü aç", "Open menu", "Открыть меню")
+      );
       btn.setAttribute("role", "button");
       if (!btn.hasAttribute("tabindex")) btn.setAttribute("tabindex", "0");
     });
@@ -226,8 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const toggleMenu = () => {
-    const open = nav.classList.contains("navmenu-open");
-    open ? closeMenu() : openMenu();
+    nav.classList.contains("navmenu-open") ? closeMenu() : openMenu();
   };
 
   document.addEventListener("click", (e) => {
@@ -246,21 +295,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // menü açıkken, nav dışına tıklayınca kapat
-  document.addEventListener("click", (e) => {
-    if (!nav.classList.contains("navmenu-open")) return;
-    if (!isMobile()) return;
-
-    const insideNav = e.target.closest("#navmenu");
-    const insideHeader = e.target.closest("#header");
-    const isToggle = e.target.closest(TOGGLE_SELECTOR);
-
-    if (!insideNav && insideHeader && !isToggle) {
-      // header alanında ama menü dışına tıkladı -> kapat
-      closeMenu();
-    }
-  });
-
   // desktop'a geçince menüyü kapat
   window.addEventListener("resize", () => {
     if (!isMobile() && nav.classList.contains("navmenu-open")) closeMenu();
@@ -269,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setMobileIcon(nav.classList.contains("navmenu-open"));
 
-  /* ----------------- 6) DROPDOWN (mobil) ----------------- */
+  /* ----------------- 5) DROPDOWN (mobil) ----------------- */
   nav.querySelectorAll(".dropdown > a.cursor-default, .dropdown > a[href='#']").forEach((trigger) => {
     trigger.addEventListener("click", (e) => {
       if (!isMobile()) return;
@@ -292,15 +326,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ----------------- 7) NAV: aktif link (path'e göre) ----------------- */
+  /* ----------------- 6) NAV: aktif link (path'e göre) ----------------- */
   function setActiveByPath() {
     navLinks.forEach((a) => {
       const href = a.getAttribute("href") || "";
       if (href.startsWith("#")) return;
 
-      const linkSlug = (href === "/" || href === "/en/") ? "index" : toSlug(href);
-
+      const linkSlug = (href === "/" || href === "/en/" || href === "/ru/") ? "index" : toSlug(href);
       const isActive = (linkSlug === "index" && isHome) || linkSlug === CURRENT_SLUG;
+
       a.classList.toggle("active", !!isActive);
 
       if (isActive) {
@@ -314,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ----------------- 8) SCROLLSPY (#anchor linkler) ----------------- */
+  /* ----------------- 7) SCROLLSPY (#anchor linkler) ----------------- */
   const HEADER_OFFSET = 100;
 
   function setActiveByScroll() {
@@ -337,11 +371,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!found) anchorLinks.forEach((a) => a.classList.remove("active"));
   }
 
-  /* ----------------- 9) Anchor tıklaması ----------------- */
+  /* ----------------- 8) Link tıklayınca mobil menüyü kapat ----------------- */
   navLinks.forEach((a) => {
-    const href = a.getAttribute("href") || "";
-
-    // mobil menü açıkken normal linke tıklanınca kapat
     a.addEventListener("click", () => {
       if (isMobile() && nav.classList.contains("navmenu-open")) {
         // dropdown trigger değilse kapat
@@ -350,6 +381,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    const href = a.getAttribute("href") || "";
     if (!href.startsWith("#")) return;
 
     a.addEventListener("click", (e) => {
@@ -358,21 +390,18 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       if (nav.classList.contains("navmenu-open")) closeMenu();
-
       target.scrollIntoView({ behavior: "smooth", block: "start" });
+
       navLinks.forEach((l) => l.classList.remove("active"));
       a.classList.add("active");
     });
   });
 
-  /* ----------------- 10) DİL DEĞİŞTİRME ----------------- */
+  /* ----------------- 9) DİL DEĞİŞTİRME ----------------- */
   function getLangUrl(targetLang) {
     const pageKey = SLUG_TO_KEY[CURRENT_SLUG] || "home";
-
     const map = PAGE_MAP[pageKey];
     if (map && map[targetLang]) return map[targetLang];
-
-    // fallback
     return LANGS[targetLang]?.base || "/";
   }
 
@@ -397,7 +426,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ----------------- 11) INIT ----------------- */
+  /* ----------------- 10) INIT ----------------- */
   setActiveByPath();
   setActiveByScroll();
   setupLanguageSwitcher();

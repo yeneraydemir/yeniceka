@@ -98,7 +98,7 @@ padding-top: 10px;
 .header .header-container {
 margin-left: 10px;
 margin-right: 10px;
-padding: 10px 5px 10px 15px;
+/* padding: 10px 5px 10px 15px; */
 }
 
 .header .logo {
@@ -2021,17 +2021,17 @@ align-items: center;
 justify-content: center;
 }
 
-.qmp4r {
-position: absolute;
-top: 50%;
-left: 50%;
-min-width: 100%;
-min-height: 100%;
-width: auto;
-height: auto;
-transform: translate(-50%, -50%);
-z-index: 1;
-object-fit: cover;
+.qmp4r{
+  position:absolute;
+  top:50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -39%); /* -50% yerine -40%..-45% */
+  z-index: 1;
+  object-fit: cover;
 }
 
 .wzl5t {
@@ -2040,7 +2040,6 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background: linear-gradient(135deg, rgba(0, 0, 0, 0.349), rgba(255, 0, 0, 0.15));
 z-index: 2;
 }
 

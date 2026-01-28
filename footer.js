@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <ul>
             <li><a href="buyukbas-kesim-ekipmanlari">Büyükbaş Kesim</a></li>
             <li><a href="kucukbas-kesim-ekipmanlari">Küçükbaş Kesim</a></li>
+            <li><a href="dairesel-kesim-makinesi">Dairesel Kesim Makinesi</a></li>
             <li><a href="kurban-kesim-hijyen-ekipmanlari">Hijyen Ekipmanları</a></li>
             <li><a href="kurban-kesim-parcalama-ekipmanlari">Parçalama Ekipmanları</a></li>
           </ul>

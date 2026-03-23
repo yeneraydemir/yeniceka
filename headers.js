@@ -1,11 +1,13 @@
-// header.js (TR + EN + RU uyumlu, .html'li / .html'siz uyumlu)
+// header.js (TR + EN + RU + AR + BEN uyumlu, .html'li / .html'siz uyumlu)
 
 document.addEventListener("DOMContentLoaded", () => {
   /* ----------------- 0) DİL ve SAYFA HARİTASI ----------------- */
   const LANGS = {
     tr: { code: "tr", base: "/" },
     en: { code: "en", base: "/en/" },
-    ru: { code: "ru", base: "/ru/" }
+    ru: { code: "ru", base: "/ru/" },
+    ar: { code: "ar", base: "/ar/" },
+    ben: { code: "ben", base: "/ben/" }
   };
 
   const LANG_CODES = Object.keys(LANGS);
@@ -25,57 +27,79 @@ document.addEventListener("DOMContentLoaded", () => {
     home: {
       tr: "/",
       en: "/en/",
-      ru: "/ru/"
+      ru: "/ru/",
+      ar: "/ar/",
+      ben: "/ben/"
     },
     about: {
       tr: "/hakkimizda",
       en: "/en/about-us",
-      ru: "/ru/o-nas"
+      ru: "/ru/o-nas",
+      ar: "/ar/من-نحن",
+      ben: "/ben/আমাদের-সম্পর্কে"
     },
     gallery: {
       tr: "/galeri",
       en: "/en/gallery",
-      ru: "/ru/galereya"
+      ru: "/ru/galereya",
+      ar: "/ar/المعرض",
+      ben: "/ben/গ্যালারি"
     },
     blog: {
       tr: "/blog",
       en: "/en/blog",
-      ru: "/ru/blog"
+      ru: "/ru/blog",
+      ar: "/ar/المدونة",
+      ben: "/ben/ব্লগ"
     },
     contact: {
       tr: "/iletisim",
       en: "/en/contact",
-      ru: "/ru/kontakty"
+      ru: "/ru/kontakty",
+      ar: "/ar/اتصل-بنا",
+      ben: "/ben/যোগাযোগ"
     },
     refs: {
       tr: "/referanslar",
       en: "/en/references",
-      ru: "/ru/referensy"
+      ru: "/ru/referensy",
+      ar: "/ar/المراجع",
+      ben: "/ben/রেফারেন্স"
     },
     products: {
       tr: "/kurban-kesim-urunleri",
       en: "/en/sacrificial-slaughter-products",
-      ru: "/ru/produkty-dlya-zaboya"
+      ru: "/ru/produkty-dlya-zaboya",
+      ar: "/ar/منتجات-الذبح",
+      ben: "/ben/কোরবানি-পণ্য"
     },
     product_cattle: {
       tr: "/buyukbas-kesim-ekipmanlari",
       en: "/en/cattle-slaughter-equipment",
-      ru: "/ru/oborudovanie-dlya-zaboya-krs"
+      ru: "/ru/oborudovanie-dlya-zaboya-krs",
+      ar: "/ar/معدات-ذبح-الأبقار",
+      ben: "/ben/গরু-জবাই-সরঞ্জাম"
     },
     product_small: {
       tr: "/kucukbas-kesim-ekipmanlari",
       en: "/en/small-ruminant-slaughter-equipment",
-      ru: "/ru/oborudovanie-dlya-zaboya-mrs"
+      ru: "/ru/oborudovanie-dlya-zaboya-mrs",
+      ar: "/ar/معدات-ذبح-الأغنام",
+      ben: "/ben/ছোট-পশু-জবাই-সরঞ্জাম"
     },
     product_hygiene: {
       tr: "/kurban-kesim-hijyen-ekipmanlari",
       en: "/en/sacrificial-slaughter-hygiene-equipment",
-      ru: "/ru/gigiyenicheskoe-oborudovanie"
+      ru: "/ru/gigiyenicheskoe-oborudovanie",
+      ar: "/ar/معدات-النظافة",
+      ben: "/ben/স্বাস্থ্যবিধি-সরঞ্জাম"
     },
     product_deboning: {
       tr: "/kurban-kesim-parcalama-ekipmanlari",
       en: "/en/sacrificial-slaughter-deboning-equipment",
-      ru: "/ru/obvalka-i-upakovka"
+      ru: "/ru/obvalka-i-upakovka",
+      ar: "/ar/معدات-التقطيع-والتغليف",
+      ben: "/ben/কাটিং-ও-প্যাকেজিং"
     }
   };
 
@@ -116,7 +140,29 @@ document.addEventListener("DOMContentLoaded", () => {
     "oborudovanie-dlya-zaboya-krs": "product_cattle",
     "oborudovanie-dlya-zaboya-mrs": "product_small",
     "gigiyenicheskoe-oborudovanie": "product_hygiene",
-    "obvalka-i-upakovka": "product_deboning"
+    "obvalka-i-upakovka": "product_deboning",
+
+    // AR
+    "من-نحن": "about",
+    "المعرض": "gallery",
+    "المدونة": "blog",
+    "اتصل-بنا": "contact",
+    "المراجع": "refs",
+    "منتجات-الذبح": "products",
+    "معدات-ذبح-الأبقار": "product_cattle",
+    "معدات-ذبح-الأغنام": "product_small",
+    "معدات-النظافة": "product_hygiene",
+    "معدات-التقطيع-والتغليف": "product_deboning",
+    "আমাদের-সম্পর্কে": "about",
+    "গ্যালারি": "gallery",
+    "ব্লগ": "blog",
+    "যোগাযোগ": "contact",
+    "রেফারেন্স": "refs",
+    "কোরবানি-পণ্য": "products",
+    "গরু-জবাই-সরঞ্জাম": "product_cattle",
+    "ছোট-পশু-জবাই-সরঞ্জাম": "product_small",
+    "স্বাস্থ্যবিধি-সরঞ্জাম": "product_hygiene",
+    "কাটিং-ও-প্যাকেজিং": "product_deboning"
   };
 
   /* ----------------- 1) Path'ten slug üret ----------------- */
@@ -152,10 +198,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return LANGS[lang]?.base || "/";
   };
 
-  // 3 dil çeviri yardımcı fonksiyonu
-  const t = (trText, enText, ruText) => {
+  // 4 dil çeviri yardımcı fonksiyonu
+  const t = (trText, enText, ruText, arText, benText) => {
     if (CURRENT_LANG === "en") return enText ?? trText;
     if (CURRENT_LANG === "ru") return ruText ?? trText;
+    if (CURRENT_LANG === "ar") return arText ?? trText;
+    if (CURRENT_LANG === "ben") return benText ?? trText;
     return trText;
   };
 
@@ -173,31 +221,31 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- NAV -->
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="${urlFor("home")}">${t("Anasayfa", "Home", "Главная")}</a></li>
-        <li><a href="${urlFor("about")}">${t("Hakkımızda", "About", "О нас")}</a></li>
+        <li><a href="${urlFor("home")}">${t("Anasayfa", "Home", "Главная", "الصفحة الرئيسية", "হোম")}</a></li>
+        <li><a href="${urlFor("about")}">${t("Hakkımızda", "About", "О нас", "من نحن", "আমাদের সম্পর্কে")}</a></li>
 
         <!-- Ürünler dropdown -->
         <li class="dropdown">
           <a href="${urlFor("products")}" class="cursor-default">
-            <span>${t("Ürünler", "Products", "Продукты")}</span>
+            <span>${t("Ürünler", "Products", "Продукты", "المنتجات", "পণ্য")}</span>
             <i class="bi bi-chevron-down toggle-dropdown"></i>
           </a>
           <ul>
-            <li><a href="${urlFor("product_cattle")}">${t("Büyükbaş Kesim Ekipmanları", "Cattle Equipment", "Оборудование для КРС")}</a></li>
-            <li><a href="${urlFor("product_small")}">${t("Küçükbaş Kesim Ekipmanları", "Small Ruminant Equipment", "Оборудование для МРС")}</a></li>
-            <li><a href="${urlFor("product_hygiene")}">${t("Hijyen Ekipmanları", "Hygiene Equipment", "Гигиеническое оборудование")}</a></li>
-            <li><a href="${urlFor("product_deboning")}">${t("Parçalama &amp; Paketleme", "Deboning &amp; Packaging", "Обвалка и упаковка")}</a></li>
+            <li><a href="${urlFor("product_cattle")}">${t("Büyükbaş Kesim Ekipmanları", "Cattle Equipment", "Оборудование для КРС", "معدات ذبح الأبقار", "গরু জবাই সরঞ্জাম")}</a></li>
+            <li><a href="${urlFor("product_small")}">${t("Küçükbaş Kesim Ekipmanları", "Small Ruminant Equipment", "Оборудование для МРС", "معدات ذبح الأغنام", "ছোট পশু জবাই সরঞ্জাম")}</a></li>
+            <li><a href="${urlFor("product_hygiene")}">${t("Hijyen Ekipmanları", "Hygiene Equipment", "Гигиеническое оборудование", "معدات النظافة", "স্বাস্থ্যবিধি সরঞ্জাম")}</a></li>
+            <li><a href="${urlFor("product_deboning")}">${t("Parçalama &amp; Paketleme", "Deboning &amp; Packaging", "Обвалка и упаковка", "التقطيع والتغليف", "কাটিং ও প্যাকেজিং")}</a></li>
           </ul>
         </li>
 
-        <li><a href="${urlFor("refs")}">${t("Referanslar", "References", "Референсы")}</a></li>
-        <li><a href="${urlFor("gallery")}">${t("Galeri", "Gallery", "Галерея")}</a></li>
+        <li><a href="${urlFor("refs")}">${t("Referanslar", "References", "Референсы", "المراجع", "রেফারেন্স")}</a></li>
+        <li><a href="${urlFor("gallery")}">${t("Galeri", "Gallery", "Галерея", "المعرض", "গ্যালারি")}</a></li>
         <li><a href="${urlFor("blog")}">Blog</a></li>
-        <li><a href="${urlFor("contact")}">${t("İletişim", "Contact", "Контакты")}</a></li>
+        <li><a href="${urlFor("contact")}">${t("İletişim", "Contact", "Контакты", "اتصل بنا", "যোগাযোগ")}</a></li>
       </ul>
 
       <!-- Mobil menü ikonu -->
-      <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="${t("Menüyü aç", "Open menu", "Открыть меню")}"></i>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="${t("Menüyü aç", "Open menu", "Открыть меню", "افتح القائمة", "মেনু খুলুন")}"></i>
     </nav>
 
     <!-- DİL BUTONLARI -->
@@ -210,6 +258,12 @@ document.addEventListener("DOMContentLoaded", () => {
       </button>
       <button class="lang-btn" data-lang="ru" aria-label="Русский">
         <img src="/assets/img/logo/rus-bayragi.png" alt="Русский">
+      </button>
+      <button class="lang-btn" data-lang="ar" aria-label="العربية">
+        <span class="lang-code">AR</span>
+      </button>
+      <button class="lang-btn" data-lang="ben" aria-label="বাংলা">
+        <span class="lang-code">BN</span>
       </button>
     </div>
 
@@ -252,7 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.setAttribute("aria-expanded", String(open));
       btn.setAttribute(
         "aria-label",
-        open ? t("Menüyü kapat", "Close menu", "Закрыть меню") : t("Menüyü aç", "Open menu", "Открыть меню")
+        open ? t("Menüyü kapat", "Close menu", "Закрыть меню", "أغلق القائمة", "মেনু বন্ধ করুন") : t("Menüyü aç", "Open menu", "Открыть меню", "افتح القائمة", "মেনু খুলুন")
       );
       btn.setAttribute("role", "button");
       if (!btn.hasAttribute("tabindex")) btn.setAttribute("tabindex", "0");
@@ -332,7 +386,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const href = a.getAttribute("href") || "";
       if (href.startsWith("#")) return;
 
-      const linkSlug = (href === "/" || href === "/en/" || href === "/ru/") ? "index" : toSlug(href);
+      const linkSlug = (href === "/" || href === "/en/" || href === "/ru/" || href === "/ar/" || href === "/ben/") ? "index" : toSlug(href);
       const isActive = (linkSlug === "index" && isHome) || linkSlug === CURRENT_SLUG;
 
       a.classList.toggle("active", !!isActive);

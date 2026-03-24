@@ -141,10 +141,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="/assets/img/logo/rus-bayragi.png" alt="Русский">
       </button>
       <button class="lang-btn" data-lang="ar" aria-label="العربية">
-        <span class="lang-code">AR</span>
+        <img src="/assets/img/logo/arabia.webp" alt="العربية">
       </button>
       <button class="lang-btn" data-lang="ben" aria-label="বাংলা">
-        <span class="lang-code">BN</span>
+        <img src="/assets/img/logo/banglades-bayragi.webp" alt="বাংলা">
       </button>
     </div>
   </div>

@@ -35,61 +35,71 @@ document.addEventListener("DOMContentLoaded", () => {
       tr: "/hakkimizda",
       en: "/en/about-us",
       ru: "/ru/o-nas",
-      ar: "/ar/من-نحن"
+      ar: "/ar/من-نحن",
+      ben: "/ben/আমাদের-সম্পর্কে"
     },
     gallery: {
       tr: "/galeri",
       en: "/en/gallery",
       ru: "/ru/galereya",
-      ar: "/ar/المعرض"
+      ar: "/ar/المعرض",
+      ben: "/ben/গ্যালারি"
     },
     blog: {
       tr: "/blog",
       en: "/en/blog",
       ru: "/ru/blog",
-      ar: "/ar/المدونة"
+      ar: "/ar/المدونة",
+      ben: "/ben/ব্লগ"
     },
     contact: {
       tr: "/iletisim",
       en: "/en/contact",
       ru: "/ru/kontakty",
-      ar: "/ar/اتصل-بنا"
+      ar: "/ar/اتصل-بنا",
+      ben: "/ben/যোগাযোগ"
     },
     refs: {
       tr: "/referanslar",
       en: "/en/references",
       ru: "/ru/referensy",
-      ar: "/ar/المراجع"
+      ar: "/ar/المراجع",
+      ben: "/ben/রেফারেন্স"
     },
     products: {
       tr: "/kurban-kesim-urunleri",
       en: "/en/sacrificial-slaughter-products",
       ru: "/ru/produkty-dlya-zaboya",
-      ar: "/ar/منتجات-الذبح"
+      ar: "/ar/منتجات-الذبح",
+      ben: "/ben/কোরবানি-পণ্য"
     },
     product_cattle: {
       tr: "/buyukbas-kesim-ekipmanlari",
       en: "/en/cattle-slaughter-equipment",
       ru: "/ru/oborudovanie-dlya-zaboya-krs",
-      ar: "/ar/معدات-ذبح-الأبقار"
+      ar: "/ar/معدات-ذبح-الأبقار",
+      ben: "/ben/গরু-জবাই-সরঞ্জাম"
     },
     product_small: {
       tr: "/kucukbas-kesim-ekipmanlari",
       en: "/en/small-ruminant-slaughter-equipment",
       ru: "/ru/oborudovanie-dlya-zaboya-mrs",
-      ar: "/ar/معدات-ذبح-الأغنام"
+      ar: "/ar/معدات-ذبح-الأغنام",
+      ben: "/ben/ছোট-পশু-জবাই-সরঞ্জাম"
     },
     product_hygiene: {
       tr: "/kurban-kesim-hijyen-ekipmanlari",
       en: "/en/sacrificial-slaughter-hygiene-equipment",
       ru: "/ru/gigiyenicheskoe-oborudovanie",
-      ar: "/ar/معدات-النظافة"
+      ar: "/ar/معدات-النظافة",
+      ben: "/ben/স্বাস্থ্যবিধি-সরঞ্জাম"
     },
     product_deboning: {
       tr: "/kurban-kesim-parcalama-ekipmanlari",
       en: "/en/sacrificial-slaughter-deboning-equipment",
       ru: "/ru/obvalka-i-upakovka",
-      ar: "/ar/معدات-التقطيع-والتغليف"
+      ar: "/ar/معدات-التقطيع-والتغليف",
+      ben: "/ben/কাটিং-ও-প্যাকেজিং"
     }
   };
 
@@ -238,10 +248,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="/assets/img/logo/rus-bayragi.png" alt="Русский">
       </button>
       <button class="lang-btn" data-lang="ar" aria-label="العربية">
-        <span class="lang-code">AR</span>
+        <img src="/assets/img/logo/arabia.webp" alt="العربية">
       </button>
       <button class="lang-btn" data-lang="ben" aria-label="বাংলা">
-        <span class="lang-code">BN</span>
+        <img src="/assets/img/logo/banglades-bayragi.webp" alt="বাংলা">
       </button>
     </div>
 

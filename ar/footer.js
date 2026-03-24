@@ -29,29 +29,29 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>المنتجات</h4>
           <ul>
-            <li><a href="/buyukbas-kesim-ekipmanlari">ذبح الأبقار</a></li>
-            <li><a href="/kucukbas-kesim-ekipmanlari">ذبح الأغنام</a></li>
+            <li><a href="/ar/معدات-ذبح-الأبقار">ذبح الأبقار</a></li>
+            <li><a href="/ar/معدات-ذبح-الأغنام">ذبح الأغنام</a></li>
             <li><a href="/dairesel-kesim-makinesi">آلة الذبح الدائرية</a></li>
-            <li><a href="/kurban-kesim-hijyen-ekipmanlari">معدات النظافة</a></li>
-            <li><a href="/kurban-kesim-parcalama-ekipmanlari">معدات التقطيع</a></li>
+            <li><a href="/ar/معدات-النظافة">معدات النظافة</a></li>
+            <li><a href="/ar/معدات-التقطيع-والتغليف">معدات التقطيع</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>الشركة</h4>
           <ul>
-            <li><a href="/hakkimizda">من نحن</a></li>
-            <li><a href="/referanslar">المراجع</a></li>
-            <li><a href="/galeri">المعرض</a></li>
-            <li><a href="/blog">Blog</a></li>
+            <li><a href="/ar/من-نحن">من نحن</a></li>
+            <li><a href="/ar/المراجع">المراجع</a></li>
+            <li><a href="/ar/المعرض">المعرض</a></li>
+            <li><a href="/ar/المدونة">المدونة</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>الدعم</h4>
           <ul>
-            <li><a href="/iletisim">اتصل بنا</a></li>
-            <li><a href="/referanslar">المراجع</a></li>
+            <li><a href="/ar/اتصل-بنا">اتصل بنا</a></li>
+            <li><a href="/ar/المراجع">المراجع</a></li>
             <li><a href="/sitemap.xml">خريطة الموقع</a></li>
           </ul>
         </div>

@@ -1,4 +1,4 @@
-// header.js (AR sayfaları için, BEN destekli)
+// header.js (AR sayfalari icin, tum dillerle eslemeli)
 
 document.addEventListener("DOMContentLoaded", () => {
   const LANGS = {
@@ -23,76 +23,118 @@ document.addEventListener("DOMContentLoaded", () => {
       tr: "/hakkimizda",
       en: "/en/about-us",
       ru: "/ru/o-nas",
-      ar: "/ar/من-نحن"
+      ar: "/ar/من-نحن",
+      ben: "/ben/আমাদের-সম্পর্কে"
     },
     gallery: {
       tr: "/galeri",
       en: "/en/gallery",
       ru: "/ru/galereya",
-      ar: "/ar/المعرض"
+      ar: "/ar/المعرض",
+      ben: "/ben/গ্যালারি"
     },
     blog: {
       tr: "/blog",
       en: "/en/blog",
       ru: "/ru/blog",
-      ar: "/ar/المدونة"
+      ar: "/ar/المدونة",
+      ben: "/ben/ব্লগ"
     },
     contact: {
       tr: "/iletisim",
       en: "/en/contact",
       ru: "/ru/kontakty",
-      ar: "/ar/اتصل-بنا"
+      ar: "/ar/اتصل-بنا",
+      ben: "/ben/যোগাযোগ"
     },
     refs: {
       tr: "/referanslar",
       en: "/en/references",
       ru: "/ru/referensy",
-      ar: "/ar/المراجع"
+      ar: "/ar/المراجع",
+      ben: "/ben/রেফারেন্স"
     },
     products: {
       tr: "/kurban-kesim-urunleri",
       en: "/en/sacrificial-slaughter-products",
       ru: "/ru/produkty-dlya-zaboya",
-      ar: "/ar/منتجات-الذبح"
+      ar: "/ar/منتجات-الذبح",
+      ben: "/ben/কোরবানি-পণ্য"
     },
     product_cattle: {
       tr: "/buyukbas-kesim-ekipmanlari",
       en: "/en/cattle-slaughter-equipment",
       ru: "/ru/oborudovanie-dlya-zaboya-krs",
-      ar: "/ar/معدات-ذبح-الأبقار"
+      ar: "/ar/معدات-ذبح-الأبقار",
+      ben: "/ben/গরু-জবাই-সরঞ্জাম"
     },
     product_small: {
       tr: "/kucukbas-kesim-ekipmanlari",
       en: "/en/small-ruminant-slaughter-equipment",
       ru: "/ru/oborudovanie-dlya-zaboya-mrs",
-      ar: "/ar/معدات-ذبح-الأغنام"
+      ar: "/ar/معدات-ذبح-الأغنام",
+      ben: "/ben/ছোট-পশু-জবাই-সরঞ্জাম"
     },
     product_hygiene: {
       tr: "/kurban-kesim-hijyen-ekipmanlari",
       en: "/en/sacrificial-slaughter-hygiene-equipment",
       ru: "/ru/gigiyenicheskoe-oborudovanie",
-      ar: "/ar/معدات-النظافة"
+      ar: "/ar/معدات-النظافة",
+      ben: "/ben/স্বাস্থ্যবিধি-সরঞ্জাম"
     },
     product_deboning: {
       tr: "/kurban-kesim-parcalama-ekipmanlari",
       en: "/en/sacrificial-slaughter-deboning-equipment",
       ru: "/ru/obvalka-i-upakovka",
-      ar: "/ar/معدات-التقطيع-والتغليف"
+      ar: "/ar/معدات-التقطيع-والتغليف",
+      ben: "/ben/কাটিং-ও-প্যাকেজিং"
+    },
+    article_systems: {
+      tr: "/mezbaha-sistemleri-nedir",
+      en: "/en/what-are-slaughterhouse-systems",
+      ar: "/ar/ما-هي-أنظمة-المسالخ",
+      ben: "/ben/স্লটারহাউস-সিস্টেম-কী"
+    },
+    article_flow: {
+      tr: "/kurban-kesim-hat-akis-plani",
+      en: "/en/sacrificial-slaughter-line-flow-plan",
+      ar: "/ar/مخطط-تدفق-خط-الذبح",
+      ben: "/ben/জবাই-লাইন-ফ্লো-প্ল্যান"
+    },
+    article_hygiene: {
+      tr: "/kurban-doneminde-hijyen-bariyerleri",
+      en: "/en/eid-slaughter-hygiene-barriers",
+      ar: "/ar/حواجز-النظافة-في-موسم-الأضاحي",
+      ben: "/ben/কোরবানির-হাইজিন-ব্যারিয়ার"
     }
   };
+
+  const SLUG_TO_KEY = {
+    "": "home",
+    index: "home",
+    "من-نحن": "about",
+    "المعرض": "gallery",
+    "المدونة": "blog",
+    "اتصل-بنا": "contact",
+    "المراجع": "refs",
+    "منتجات-الذبح": "products",
+    "معدات-ذبح-الأبقار": "product_cattle",
+    "معدات-ذبح-الأغنام": "product_small",
+    "معدات-النظافة": "product_hygiene",
+    "معدات-التقطيع-والتغليف": "product_deboning",
+    "ما-هي-أنظمة-المسالخ": "article_systems",
+    "مخطط-تدفق-خط-الذبح": "article_flow",
+    "حواجز-النظافة-في-موسم-الأضاحي": "article_hygiene"
+  };
+
+  const pathname = window.location.pathname.replace(/\/+$/, "");
+  const parts = pathname.split("/").filter(Boolean);
+  const CURRENT_SLUG = parts.length <= 1 ? "index" : parts[1];
 
   const urlFor = (pageKey, lang = CURRENT_LANG) => {
     const map = PAGE_MAP[pageKey];
     if (map && map[lang]) return map[lang];
     return LANGS[lang]?.base || "/";
-  };
-
-  const t = (trText, enText, ruText, arText, benText) => {
-    if (CURRENT_LANG === "en") return enText ?? trText;
-    if (CURRENT_LANG === "ru") return ruText ?? trText;
-    if (CURRENT_LANG === "ar") return arText ?? trText;
-    if (CURRENT_LANG === "ben") return benText ?? trText;
-    return trText;
   };
 
   const headerHTML = `
@@ -105,27 +147,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="${urlFor("home")}">${t("", "", "", "الصفحة الرئيسية")}</a></li>
-        <li><a href="${urlFor("about")}">${t("", "", "", "من نحن")}</a></li>
+        <li><a href="${urlFor("home")}">الرئيسية</a></li>
+        <li><a href="${urlFor("about")}">من نحن</a></li>
         <li class="dropdown">
           <a href="${urlFor("products")}" class="cursor-default">
-            <span>${t("", "", "", "المنتجات")}</span>
+            <span>المنتجات</span>
             <i class="bi bi-chevron-down toggle-dropdown"></i>
           </a>
           <ul>
-            <li><a href="${urlFor("product_cattle")}">${t("", "", "", "معدات ذبح الأبقار")}</a></li>
-            <li><a href="${urlFor("product_small")}">${t("", "", "", "معدات ذبح الأغنام")}</a></li>
-            <li><a href="${urlFor("product_hygiene")}">${t("", "", "", "معدات النظافة")}</a></li>
-            <li><a href="${urlFor("product_deboning")}">${t("", "", "", "التقطيع والتغليف")}</a></li>
+            <li><a href="${urlFor("product_cattle")}">معدات ذبح الأبقار</a></li>
+            <li><a href="${urlFor("product_small")}">معدات ذبح الأغنام</a></li>
+            <li><a href="${urlFor("product_hygiene")}">معدات النظافة</a></li>
+            <li><a href="${urlFor("product_deboning")}">معدات التقطيع والتغليف</a></li>
           </ul>
         </li>
-        <li><a href="${urlFor("refs")}">${t("", "", "", "المراجع")}</a></li>
-        <li><a href="${urlFor("gallery")}">${t("", "", "", "المعرض")}</a></li>
-        <li><a href="${urlFor("blog")}">Blog</a></li>
-        <li><a href="${urlFor("contact")}">${t("", "", "", "اتصل بنا")}</a></li>
+        <li><a href="${urlFor("refs")}">المراجع</a></li>
+        <li><a href="${urlFor("gallery")}">المعرض</a></li>
+        <li><a href="${urlFor("blog")}">المدونة</a></li>
+        <li><a href="${urlFor("contact")}">اتصل بنا</a></li>
       </ul>
 
-      <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="${t("", "", "", "افتح القائمة")}"></i>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="افتح القائمة"></i>
     </nav>
 
     <div class="header-lang d-xl-flex align-items-center btn-getstarted">
@@ -139,10 +181,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="/assets/img/logo/rus-bayragi.png" alt="Русский">
       </button>
       <button class="lang-btn" data-lang="ar" aria-label="العربية">
-        <span class="lang-code">AR</span>
+        <img src="/assets/img/logo/arabia.webp" alt="العربية">
       </button>
       <button class="lang-btn" data-lang="ben" aria-label="বাংলা">
-        <span class="lang-code">BN</span>
+        <img src="/assets/img/logo/banglades-bayragi.webp" alt="বাংলা">
       </button>
     </div>
   </div>
@@ -215,12 +257,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function getLangUrl(targetLang) {
-    return PAGE_MAP.home[targetLang] || LANGS[targetLang]?.base || "/";
+    const pageKey = SLUG_TO_KEY[CURRENT_SLUG] || "home";
+    const map = PAGE_MAP[pageKey];
+    if (map && map[targetLang]) return map[targetLang];
+    return LANGS[targetLang]?.base || "/";
   }
 
-  function setupLanguageSwitcher() {
-    const container = document.querySelector(".header-lang");
-    if (!container) return;
+  const container = document.querySelector(".header-lang");
+  if (container) {
     const buttons = container.querySelectorAll(".lang-btn[data-lang]");
     buttons.forEach((btn) => {
       const lang = btn.dataset.lang;
@@ -246,5 +290,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   setMobileIcon(nav.classList.contains("navmenu-open"));
-  setupLanguageSwitcher();
 });

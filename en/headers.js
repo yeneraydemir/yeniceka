@@ -25,11 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Tek bir "pageKey" üzerinden tüm dillerin URL'lerini yönetiyoruz
   const PAGE_MAP = {
     home: {
-      tr: "/index.html",
-      en: "/en/index.html",
-      ru: "/ru/index.html",
-      ar: "/ar/index.html",
-      ben: "/ben/index.html"
+      tr: "/",
+      en: "/en/",
+      ru: "/ru/",
+      ar: "/ar/",
+      ben: "/ben/"
     },
     about: {
       tr: "/hakkimizda",
@@ -100,12 +100,29 @@ document.addEventListener("DOMContentLoaded", () => {
       ru: "/ru/obvalka-i-upakovka",
       ar: "/ar/معدات-التقطيع-والتغليف",
       ben: "/ben/কাটিং-ও-প্যাকেজিং"
+    },
+    article_systems: {
+      tr: "/mezbaha-sistemleri-nedir",
+      en: "/en/what-are-slaughterhouse-systems",
+      ar: "/ar/ما-هي-أنظمة-المسالخ",
+      ben: "/ben/স্লটারহাউস-সিস্টেম-কী"
+    },
+    article_flow: {
+      tr: "/kurban-kesim-hat-akis-plani",
+      en: "/en/sacrificial-slaughter-line-flow-plan",
+      ar: "/ar/مخطط-تدفق-خط-الذبح",
+      ben: "/ben/জবাই-লাইন-ফ্লো-প্ল্যান"
+    },
+    article_hygiene: {
+      tr: "/kurban-doneminde-hijyen-bariyerleri",
+      en: "/en/eid-slaughter-hygiene-barriers",
+      ar: "/ar/حواجز-النظافة-في-موسم-الأضاحي",
+      ben: "/ben/কোরবানির-হাইজিন-ব্যারিয়ার"
     }
   };
 
   // slug (dosya adı) -> PAGE_MAP key'i
   const SLUG_TO_KEY = {
-    // ana sayfa
     index: "home",
 
     // TR
@@ -119,6 +136,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "kucukbas-kesim-ekipmanlari": "product_small",
     "kurban-kesim-hijyen-ekipmanlari": "product_hygiene",
     "kurban-kesim-parcalama-ekipmanlari": "product_deboning",
+    "mezbaha-sistemleri-nedir": "article_systems",
+    "kurban-kesim-hat-akis-plani": "article_flow",
+    "kurban-doneminde-hijyen-bariyerleri": "article_hygiene",
 
     // EN
     "about-us": "about",
@@ -130,8 +150,11 @@ document.addEventListener("DOMContentLoaded", () => {
     "small-ruminant-slaughter-equipment": "product_small",
     "sacrificial-slaughter-hygiene-equipment": "product_hygiene",
     "sacrificial-slaughter-deboning-equipment": "product_deboning",
+    "what-are-slaughterhouse-systems": "article_systems",
+    "sacrificial-slaughter-line-flow-plan": "article_flow",
+    "eid-slaughter-hygiene-barriers": "article_hygiene",
 
-    // RU (örnek transliterasyon)
+    // RU
     "o-nas": "about",
     "galereya": "gallery",
     "kontakty": "contact",
@@ -141,6 +164,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "oborudovanie-dlya-zaboya-mrs": "product_small",
     "gigiyenicheskoe-oborudovanie": "product_hygiene",
     "obvalka-i-upakovka": "product_deboning",
+
+    // AR
     "من-نحن": "about",
     "المعرض": "gallery",
     "المدونة": "blog",
@@ -150,7 +175,25 @@ document.addEventListener("DOMContentLoaded", () => {
     "معدات-ذبح-الأبقار": "product_cattle",
     "معدات-ذبح-الأغنام": "product_small",
     "معدات-النظافة": "product_hygiene",
-    "معدات-التقطيع-والتغليف": "product_deboning"
+    "معدات-التقطيع-والتغليف": "product_deboning",
+    "ما-هي-أنظمة-المسالخ": "article_systems",
+    "مخطط-تدفق-خط-الذبح": "article_flow",
+    "حواجز-النظافة-في-موسم-الأضاحي": "article_hygiene",
+
+    // BEN
+    "আমাদের-সম্পর্কে": "about",
+    "গ্যালারি": "gallery",
+    "ব্লগ": "blog",
+    "যোগাযোগ": "contact",
+    "রেফারেন্স": "refs",
+    "কোরবানি-পণ্য": "products",
+    "গরু-জবাই-সরঞ্জাম": "product_cattle",
+    "ছোট-পশু-জবাই-সরঞ্জাম": "product_small",
+    "স্বাস্থ্যবিধি-সরঞ্জাম": "product_hygiene",
+    "কাটিং-ও-প্যাকেজিং": "product_deboning",
+    "স্লটারহাউস-সিস্টেম-কী": "article_systems",
+    "জবাই-লাইন-ফ্লো-প্ল্যান": "article_flow",
+    "কোরবানির-হাইজিন-ব্যারিয়ার": "article_hygiene"
   };
 
   /* ----------------- 1) Path'ten slug üret ----------------- */
@@ -158,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const u = new URL(pathOrHref, location.href);
       const parts = u.pathname.split("/").filter(Boolean);
-      let last = parts.pop();
+      let last = decodeURIComponent(parts.pop() || "");
 
       // /, /en/, /ru/ vb.
       if (!last) return "index";
@@ -171,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return last || "index";
     } catch {
       const raw = String(pathOrHref).split("#")[0].split("?")[0];
-      let seg = raw.split("/").filter(Boolean).pop() || "index";
+      let seg = decodeURIComponent(raw.split("/").filter(Boolean).pop() || "index");
       seg = seg.replace(/\.html?$/i, "");
       return seg || "index";
     }
@@ -219,10 +262,10 @@ document.addEventListener("DOMContentLoaded", () => {
             <i class="bi bi-chevron-down toggle-dropdown"></i>
           </a>
           <ul>
-            <li><a href="${urlFor("product_cattle")}">${t("Büyükbaş Kesim Ekipmanları", "Cattle Equipment", "Оборудование для КРС", "معدات ذبح الأبقار")}</a></li>
-            <li><a href="${urlFor("product_small")}">${t("Küçükbaş Kesim Ekipmanları", "Small Ruminant Equipment", "Оборудование для МРС", "معدات ذبح الأغنام")}</a></li>
-            <li><a href="${urlFor("product_hygiene")}">${t("Hijyen Ekipmanları", "Hygiene Equipment", "Гигиеническое оборудование", "معدات النظافة")}</a></li>
-            <li><a href="${urlFor("product_deboning")}">${t("Parçalama &amp; Paketleme", "Deboning &amp; Packaging", "Обвалка и упаковка", "التقطيع والتغليف")}</a></li>
+            <li><a href="${urlFor("product_cattle")}">${t("Büyükbaş Kesim Ekipmanları", "Cattle Equipment", "Оборудование для КРС", "معدات ذبح الأبقار", "গরু জবাই সরঞ্জাম")}</a></li>
+            <li><a href="${urlFor("product_small")}">${t("Küçükbaş Kesim Ekipmanları", "Small Ruminant Equipment", "Оборудование для МРС", "معدات ذبح الأغنام", "ছোট পশু জবাই সরঞ্জাম")}</a></li>
+            <li><a href="${urlFor("product_hygiene")}">${t("Hijyen Ekipmanları", "Hygiene Equipment", "Гигиеническое оборудование", "معدات النظافة", "স্বাস্থ্যবিধি সরঞ্জাম")}</a></li>
+            <li><a href="${urlFor("product_deboning")}">${t("Parçalama &amp; Paketleme", "Deboning &amp; Packaging", "Обвалка и упаковка", "التقطيع والتغليف", "কাটিং ও প্যাকেজিং")}</a></li>
           </ul>
         </li>
 

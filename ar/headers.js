@@ -13,11 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const PAGE_MAP = {
     home: {
-      tr: "/",
-      en: "/en/",
-      ru: "/ru/",
-      ar: "/ar/",
-      ben: "/ben/"
+      tr: "/index.html",
+      en: "/en/index.html",
+      ru: "/ru/index.html",
+      ar: "/ar/index.html",
+      ben: "/ben/index.html"
     },
     about: {
       tr: "/hakkimizda",

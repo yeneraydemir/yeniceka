@@ -25,11 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Tek bir "pageKey" üzerinden tüm dillerin URL'lerini yönetiyoruz
   const PAGE_MAP = {
     home: {
-      tr: "/",
-      en: "/en/",
-      ru: "/ru/",
-      ar: "/ar/",
-      ben: "/ben/"
+      tr: "/index.html",
+      en: "/en/index.html",
+      ru: "/ru/index.html",
+      ar: "/ar/index.html",
+      ben: "/ben/index.html"
     },
     about: {
       tr: "/hakkimizda",
@@ -374,7 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const href = a.getAttribute("href") || "";
       if (href.startsWith("#")) return;
 
-      const linkSlug = (href === "/" || href === "/en/" || href === "/ru/" || href === "/ar/" || href === "/ben/") ? "index" : toSlug(href);
+      const linkSlug = (href === "/" || href === "/index.html" || href === "/en/" || href === "/en/index.html" || href === "/ru/" || href === "/ru/index.html" || href === "/ar/" || href === "/ar/index.html" || href === "/ben/" || href === "/ben/index.html") ? "index" : toSlug(href);
       const isActive = (linkSlug === "index" && isHome) || linkSlug === CURRENT_SLUG;
 
       a.classList.toggle("active", !!isActive);

@@ -35,89 +35,89 @@ document.addEventListener("DOMContentLoaded", () => {
       tr: "/hakkimizda",
       en: "/en/about-us",
       ru: "/ru/o-nas",
-      ar: "/ar/من-نحن",
-      ben: "/ben/আমাদের-সম্পর্কে"
+      ar: "/ar/about-us",
+      ben: "/ben/about-us"
     },
     gallery: {
       tr: "/galeri",
       en: "/en/gallery",
       ru: "/ru/galereya",
-      ar: "/ar/المعرض",
-      ben: "/ben/গ্যালারি"
+      ar: "/ar/gallery",
+      ben: "/ben/gallery"
     },
     blog: {
       tr: "/blog",
       en: "/en/blog",
       ru: "/ru/blog",
-      ar: "/ar/المدونة",
-      ben: "/ben/ব্লগ"
+      ar: "/ar/blog",
+      ben: "/ben/blog"
     },
     contact: {
       tr: "/iletisim",
       en: "/en/contact",
       ru: "/ru/kontakty",
-      ar: "/ar/اتصل-بنا",
-      ben: "/ben/যোগাযোগ"
+      ar: "/ar/contact",
+      ben: "/ben/contact"
     },
     refs: {
       tr: "/referanslar",
       en: "/en/references",
       ru: "/ru/referensy",
-      ar: "/ar/المراجع",
-      ben: "/ben/রেফারেন্স"
+      ar: "/ar/references",
+      ben: "/ben/references"
     },
     products: {
       tr: "/kurban-kesim-urunleri",
       en: "/en/sacrificial-slaughter-products",
       ru: "/ru/produkty-dlya-zaboya",
-      ar: "/ar/منتجات-الذبح",
-      ben: "/ben/কোরবানি-পণ্য"
+      ar: "/ar/slaughter-products",
+      ben: "/ben/slaughter-products"
     },
     product_cattle: {
       tr: "/buyukbas-kesim-ekipmanlari",
       en: "/en/cattle-slaughter-equipment",
       ru: "/ru/oborudovanie-dlya-zaboya-krs",
-      ar: "/ar/معدات-ذبح-الأبقار",
-      ben: "/ben/গরু-জবাই-সরঞ্জাম"
+      ar: "/ar/cattle-slaughter-equipment",
+      ben: "/ben/cattle-slaughter-equipment"
     },
     product_small: {
       tr: "/kucukbas-kesim-ekipmanlari",
       en: "/en/small-ruminant-slaughter-equipment",
       ru: "/ru/oborudovanie-dlya-zaboya-mrs",
-      ar: "/ar/معدات-ذبح-الأغنام",
-      ben: "/ben/ছোট-পশু-জবাই-সরঞ্জাম"
+      ar: "/ar/small-ruminant-slaughter-equipment",
+      ben: "/ben/small-ruminant-slaughter-equipment"
     },
     product_hygiene: {
       tr: "/kurban-kesim-hijyen-ekipmanlari",
       en: "/en/sacrificial-slaughter-hygiene-equipment",
       ru: "/ru/gigiyenicheskoe-oborudovanie",
-      ar: "/ar/معدات-النظافة",
-      ben: "/ben/স্বাস্থ্যবিধি-সরঞ্জাম"
+      ar: "/ar/hygiene-equipment",
+      ben: "/ben/hygiene-equipment"
     },
     product_deboning: {
       tr: "/kurban-kesim-parcalama-ekipmanlari",
       en: "/en/sacrificial-slaughter-deboning-equipment",
       ru: "/ru/obvalka-i-upakovka",
-      ar: "/ar/معدات-التقطيع-والتغليف",
-      ben: "/ben/কাটিং-ও-প্যাকেজিং"
+      ar: "/ar/deboning-packaging",
+      ben: "/ben/deboning-packaging"
     },
     article_systems: {
       tr: "/mezbaha-sistemleri-nedir",
       en: "/en/what-are-slaughterhouse-systems",
-      ar: "/ar/ما-هي-أنظمة-المسالخ",
-      ben: "/ben/স্লটারহাউস-সিস্টেম-কী"
+      ar: "/ar/slaughterhouse-systems",
+      ben: "/ben/slaughterhouse-systems"
     },
     article_flow: {
       tr: "/kurban-kesim-hat-akis-plani",
       en: "/en/sacrificial-slaughter-line-flow-plan",
-      ar: "/ar/مخطط-تدفق-خط-الذبح",
-      ben: "/ben/জবাই-লাইন-ফ্লো-প্ল্যান"
+      ar: "/ar/slaughter-line-flow-plan",
+      ben: "/ben/slaughter-line-flow-plan"
     },
     article_hygiene: {
       tr: "/kurban-doneminde-hijyen-bariyerleri",
       en: "/en/eid-slaughter-hygiene-barriers",
-      ar: "/ar/حواجز-النظافة-في-موسم-الأضاحي",
-      ben: "/ben/কোরবানির-হাইজিন-ব্যারিয়ার"
+      ar: "/ar/eid-slaughter-hygiene-barriers",
+      ben: "/ben/eid-slaughter-hygiene-barriers"
     }
   };
 
@@ -146,12 +146,17 @@ document.addEventListener("DOMContentLoaded", () => {
     contact: "contact",
     references: "refs",
     "sacrificial-slaughter-products": "products",
+    "slaughter-products": "products",
     "cattle-slaughter-equipment": "product_cattle",
     "small-ruminant-slaughter-equipment": "product_small",
     "sacrificial-slaughter-hygiene-equipment": "product_hygiene",
+    "hygiene-equipment": "product_hygiene",
     "sacrificial-slaughter-deboning-equipment": "product_deboning",
+    "deboning-packaging": "product_deboning",
     "what-are-slaughterhouse-systems": "article_systems",
+    "slaughterhouse-systems": "article_systems",
     "sacrificial-slaughter-line-flow-plan": "article_flow",
+    "slaughter-line-flow-plan": "article_flow",
     "eid-slaughter-hygiene-barriers": "article_hygiene",
 
     // RU
@@ -245,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- LOGO -->
     <a href="${urlFor("home")}" class="logo d-flex align-items-center me-auto me-xl-0">
-      <img class="img-fluid" src="/assets/img/logo/ceka-bull.png" alt="Ceka Mezbaha Logo">
+      <img class="img-fluid" src="/assets/img/logo/ceka-bull.png" alt="Ceka Mezbaha Sistemleri logosu" title="Ceka Mezbaha Sistemleri logosu">
       <h5 class="logo-text">CEKA</h5>
     </a>
 
@@ -282,19 +287,19 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- DİL BUTONLARI -->
     <div class="header-lang d-xl-flex align-items-center btn-getstarted">
       <button class="lang-btn" data-lang="tr" aria-label="Türkçe">
-        <img src="/assets/img/logo/turk-bayragi.png" alt="Türkçe">
+        <img src="/assets/img/logo/turk-bayragi.png" alt="Türkçe dil seçeneği" title="Türkçe dil seçeneği">
       </button>
       <button class="lang-btn" data-lang="en" aria-label="English">
-        <img src="/assets/img/logo/ingiliz-bayragi.png" alt="English">
+        <img src="/assets/img/logo/ingiliz-bayragi.png" alt="English language option" title="English language option">
       </button>
       <button class="lang-btn" data-lang="ru" aria-label="Русский">
-        <img src="/assets/img/logo/rus-bayragi.png" alt="Русский">
+        <img src="/assets/img/logo/rus-bayragi.png" alt="Русский язык" title="Русский язык">
       </button>
       <button class="lang-btn" data-lang="ar" aria-label="العربية">
-        <img src="/assets/img/logo/arabia.webp" alt="العربية">
+        <img src="/assets/img/logo/arabia.webp" alt="خيار اللغة العربية" title="خيار اللغة العربية">
       </button>
       <button class="lang-btn" data-lang="ben" aria-label="বাংলা">
-        <img src="/assets/img/logo/banglades-bayragi.webp" alt="বাংলা">
+        <img src="/assets/img/logo/banglades-bayragi.webp" alt="বাংলা ভাষা নির্বাচন" title="বাংলা ভাষা নির্বাচন">
       </button>
     </div>
 

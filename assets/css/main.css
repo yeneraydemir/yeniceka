@@ -2490,3 +2490,254 @@ a {
                 width: 50%;
             }
         }
+/* Anasayfa Sectionlarından biri */
+  .xk9p2 {
+    background-color: var(--background-color);
+    padding: 80px 0 90px;
+  }
+
+  .mq7r4 {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .mq7r4 .lv3t8 {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin-bottom: 14px;
+    padding: 5px 14px;
+    border: 1px solid var(--accent-outline);
+    background: var(--accent-soft);
+    border-radius: 20px;
+  }
+
+  .mq7r4 h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+
+  .mq7r4 p {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .bz5w1 {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .bz5w1:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.09);
+    transform: translateY(-4px);
+  }
+
+  .nr8s6 {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+  }
+
+  .nr8s6.qw2m9 {
+    background-image:
+      linear-gradient(135deg, rgba(58, 5, 9, 0.88) 0%, rgba(124, 16, 27, 0.76) 52%, rgba(176, 18, 31, 0.62) 100%),
+      url('../img/kucukbas/kucukbas-isleme-hatti.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .nr8s6.yt6h3 {
+    background-image:
+      linear-gradient(135deg, rgba(10, 12, 15, 0.84) 0%, rgba(34, 12, 16, 0.72) 48%, rgba(176, 18, 31, 0.52) 100%),
+      url('../img/galeri/samsun-florya-et-buyukbas-isleme-hatti.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .nr8s6::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.08;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 18px,
+      rgba(255,255,255,0.5) 18px,
+      rgba(255,255,255,0.5) 19px
+    );
+  }
+
+  .dg4e7 {
+    position: absolute;
+    top: 0; right: 0;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    opacity: 0.07;
+    background: var(--contrast-color);
+    transform: translate(40%, -40%);
+  }
+
+  .fp1n5 {
+    position: relative;
+    z-index: 2;
+  }
+
+  .fp1n5 .nb3k2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 8px;
+  }
+
+  .fp1n5 h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.25;
+  }
+
+  .rj7c5 {
+    padding: 28px 28px 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rj7c5 p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.72;
+    font-weight: 300;
+    margin-bottom: 24px;
+    flex: 1;
+  }
+
+  .wt9a4 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .wt9a4 .hq6l8 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--default-color);
+    font-weight: 400;
+  }
+
+  .wt9a4 .hq6l8 .ic2p7 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .ic2p7.sx4f1 { background: var(--accent-soft); }
+  .ic2p7.sy5g2 { background: #ecfdf5; }
+
+  .ic2p7.sx4f1 svg { color: var(--accent-color); }
+  .ic2p7.sy5g2 svg { color: #059669; }
+
+  .ez3b9 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 11px 22px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+  }
+
+  .ez3b9.pm6v2 {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+  }
+
+  .ez3b9.pm6v2:hover {
+    background: #8e0e19;
+    color: var(--contrast-color);
+  }
+
+  .ez3b9.dk8u3 {
+    background: var(--section-dark-bg);
+    color: var(--contrast-color);
+  }
+
+  .ez3b9.dk8u3:hover {
+    background: #22272f;
+    color: var(--contrast-color);
+  }
+
+  .ez3b9 svg {
+    transition: transform 0.2s ease;
+  }
+
+  .ez3b9:hover svg {
+    transform: translateX(3px);
+  }
+
+  .cv1m0 {
+    margin-top: 56px;
+    text-align: center;
+    padding: 28px;
+    background: var(--surface-alt);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+  }
+
+  .cv1m0 p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin: 0;
+    font-weight: 300;
+  }
+
+  .cv1m0 a {
+    color: var(--accent-color);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .cv1m0 a:hover {
+    text-decoration: underline;
+  }

@@ -118,6 +118,15 @@ document.addEventListener("DOMContentLoaded", () => {
       en: "/en/eid-slaughter-hygiene-barriers",
       ar: "/ar/eid-slaughter-hygiene-barriers",
       ben: "/ben/eid-slaughter-hygiene-barriers"
+    },
+    facility_small: {
+      tr: "/kucuk-olcekli-mezbaha-tesisi",
+      en: "/en/small-scale-slaughterhouse-facility"
+    },
+    facility_industrial: {
+      tr: "/endustriyel-mezbaha-tesisi-kurulumu",
+      en: "/en/industrial-slaughterhouse-facility",
+      ru: "/ru/promyshlennaya-boynya"
     }
   };
 
@@ -139,6 +148,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "mezbaha-sistemleri-nedir": "article_systems",
     "kurban-kesim-hat-akis-plani": "article_flow",
     "kurban-doneminde-hijyen-bariyerleri": "article_hygiene",
+    "kucuk-olcekli-mezbaha-tesisi": "facility_small",
+    "endustriyel-mezbaha-tesisi-kurulumu": "facility_industrial",
 
     // EN
     "about-us": "about",
@@ -158,6 +169,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "sacrificial-slaughter-line-flow-plan": "article_flow",
     "slaughter-line-flow-plan": "article_flow",
     "eid-slaughter-hygiene-barriers": "article_hygiene",
+    "small-scale-slaughterhouse-facility": "facility_small",
+    "industrial-slaughterhouse-facility": "facility_industrial",
 
     // RU
     "o-nas": "about",
@@ -169,6 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "oborudovanie-dlya-zaboya-mrs": "product_small",
     "gigiyenicheskoe-oborudovanie": "product_hygiene",
     "obvalka-i-upakovka": "product_deboning",
+    "promyshlennaya-boynya": "facility_industrial",
 
     // AR
     "من-نحن": "about",

@@ -2516,9 +2516,9 @@ a {
   }
 
   .mq7r4 h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Archivo', sans-serif;
     font-size: clamp(28px, 4vw, 40px);
-    font-weight: 700;
+    font-weight: 800;
     color: var(--heading-color);
     margin-bottom: 14px;
     line-height: 1.2;
@@ -2619,9 +2619,9 @@ a {
   }
 
   .fp1n5 h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Archivo', sans-serif;
     font-size: 22px;
-    font-weight: 700;
+    font-weight: 800;
     color: #ffffff;
     margin: 0;
     line-height: 1.25;

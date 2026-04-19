@@ -863,6 +863,17 @@ a {
     height: 275px;
     background: var(--surface-alt);
 }
+.jkd4r6_image-wrapper.no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-color);
+}
+.jkd4r6_image-placeholder {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
 .gty8n3_badge,
 .tzk3p8_btn-primary {
     background: var(--accent-color);

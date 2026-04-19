@@ -2566,7 +2566,7 @@ a {
     position: relative;
     overflow: hidden;
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     padding: 24px;
   }
 
@@ -2615,6 +2615,8 @@ a {
   .fp1n5 {
     position: relative;
     z-index: 2;
+    align-self: flex-start;
+    max-width: calc(100% - 96px);
   }
 
   .fp1n5 .nb3k2 {
@@ -2625,7 +2627,7 @@ a {
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.82);
     margin-bottom: 8px;
   }
 
@@ -2636,6 +2638,21 @@ a {
     color: #ffffff;
     margin: 0;
     line-height: 1.25;
+  }
+
+  .ta4m2 {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    z-index: 2;
+    padding: 7px 11px;
+    border-radius: 8px;    
+    color: rgba(255,255,255,0.94);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.2;
+    backdrop-filter: blur(6px);
+    text-align: right;
   }
 
   .rj7c5 {
@@ -2734,6 +2751,27 @@ a {
     background: var(--surface-alt);
     border-radius: 12px;
     border: 1px solid var(--border-color);
+  }
+
+  @media (max-width: 575px) {
+    .nr8s6 {
+      padding: 20px;
+    }
+
+    .fp1n5 {
+      max-width: calc(100% - 44px);
+    }
+
+    .fp1n5 h3 {
+      font-size: 20px;
+    }
+
+    .ta4m2 {
+      right: 20px;
+      bottom: 20px;
+      font-size: 11px;
+      padding: 6px 10px;
+    }
   }
 
   .cv1m0 p {

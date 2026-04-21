@@ -21,6 +21,22 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const CURRENT_LANG = detectLang();
+  const IS_LOCAL_HTML_MODE = ["localhost", "127.0.0.1"].includes(location.hostname);
+
+  const withLocalHtml = (path) => {
+    if (!IS_LOCAL_HTML_MODE || !path) return path;
+    if (/^(mailto:|tel:|javascript:|#)/i.test(path)) return path;
+
+    const match = String(path).match(/^([^?#]*)([?#].*)?$/);
+    const pathname = match?.[1] || path;
+    const suffix = match?.[2] || "";
+
+    if (pathname === "/") return `/index.html${suffix}`;
+    if (pathname.endsWith("/")) return `${pathname}index.html${suffix}`;
+    if (/\.[a-z0-9]+$/i.test(pathname)) return `${pathname}${suffix}`;
+
+    return `${pathname}.html${suffix}`;
+  };
 
   // Tek bir "pageKey" üzerinden tüm dillerin URL'lerini yönetiyoruz
   const PAGE_MAP = {
@@ -101,6 +117,13 @@ document.addEventListener("DOMContentLoaded", () => {
       ar: "/ar/deboning-packaging",
       ben: "/ben/deboning-packaging"
     },
+    product_brisket_saw: {
+      tr: "/dos-acma-testeresi",
+      en: "/en/brisket-opening-saw",
+      ru: "/ru/pila-dlya-vskrytiya-grudiny",
+      ar: "/ar/minshar-fath-al-sadr",
+      ben: "/ben/buk-kholar-korat"
+    },
     article_systems: {
       tr: "/mezbaha-sistemleri-nedir",
       en: "/en/what-are-slaughterhouse-systems",
@@ -145,6 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "kucukbas-kesim-ekipmanlari": "product_small",
     "kurban-kesim-hijyen-ekipmanlari": "product_hygiene",
     "kurban-kesim-parcalama-ekipmanlari": "product_deboning",
+    "dos-acma-testeresi": "product_brisket_saw",
     "mezbaha-sistemleri-nedir": "article_systems",
     "kurban-kesim-hat-akis-plani": "article_flow",
     "kurban-doneminde-hijyen-bariyerleri": "article_hygiene",
@@ -164,6 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "hygiene-equipment": "product_hygiene",
     "sacrificial-slaughter-deboning-equipment": "product_deboning",
     "deboning-packaging": "product_deboning",
+    "brisket-opening-saw": "product_brisket_saw",
     "what-are-slaughterhouse-systems": "article_systems",
     "slaughterhouse-systems": "article_systems",
     "sacrificial-slaughter-line-flow-plan": "article_flow",
@@ -182,6 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "oborudovanie-dlya-zaboya-mrs": "product_small",
     "gigiyenicheskoe-oborudovanie": "product_hygiene",
     "obvalka-i-upakovka": "product_deboning",
+    "pila-dlya-vskrytiya-grudiny": "product_brisket_saw",
     "promyshlennaya-boynya": "facility_industrial",
 
     // AR
@@ -195,6 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "معدات-ذبح-الأغنام": "product_small",
     "معدات-النظافة": "product_hygiene",
     "معدات-التقطيع-والتغليف": "product_deboning",
+    "minshar-fath-al-sadr": "product_brisket_saw",
     "ما-هي-أنظمة-المسالخ": "article_systems",
     "مخطط-تدفق-خط-الذبح": "article_flow",
     "حواجز-النظافة-في-موسم-الأضاحي": "article_hygiene",
@@ -210,6 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "ছোট-পশু-জবাই-সরঞ্জাম": "product_small",
     "স্বাস্থ্যবিধি-সরঞ্জাম": "product_hygiene",
     "কাটিং-ও-প্যাকেজিং": "product_deboning",
+    "buk-kholar-korat": "product_brisket_saw",
     "স্লটারহাউস-সিস্টেম-কী": "article_systems",
     "জবাই-লাইন-ফ্লো-প্ল্যান": "article_flow",
     "কোরবানির-হাইজিন-ব্যারিয়ার": "article_hygiene"
@@ -244,8 +272,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const urlFor = (pageKey, lang = CURRENT_LANG) => {
     const map = PAGE_MAP[pageKey];
-    if (map && map[lang]) return map[lang];
-    return LANGS[lang]?.base || "/";
+    if (map && map[lang]) return withLocalHtml(map[lang]);
+    return withLocalHtml(LANGS[lang]?.base || "/");
   };
 
   // 4 dil çeviri yardımcı fonksiyonu
@@ -505,8 +533,31 @@ document.addEventListener("DOMContentLoaded", () => {
   function getLangUrl(targetLang) {
     const pageKey = SLUG_TO_KEY[CURRENT_SLUG] || "home";
     const map = PAGE_MAP[pageKey];
-    if (map && map[targetLang]) return map[targetLang];
-    return LANGS[targetLang]?.base || "/";
+    if (map && map[targetLang]) return withLocalHtml(map[targetLang]);
+    return withLocalHtml(LANGS[targetLang]?.base || "/");
+  }
+
+  function normalizeInternalLinksForLocal() {
+    if (!IS_LOCAL_HTML_MODE) return;
+
+    document.querySelectorAll("a[href]").forEach((a) => {
+      const href = a.getAttribute("href") || "";
+      if (!href || href.startsWith("#") || /^(mailto:|tel:|javascript:)/i.test(href)) return;
+
+      let url;
+      try {
+        url = new URL(href, location.origin);
+      } catch {
+        return;
+      }
+
+      if (url.origin !== location.origin) return;
+      if (url.pathname.startsWith("/assets/")) return;
+      if (/\.[a-z0-9]+$/i.test(url.pathname) && !/\.html?$/i.test(url.pathname)) return;
+
+      const normalized = withLocalHtml(url.pathname + url.search + url.hash);
+      if (normalized && normalized !== href) a.setAttribute("href", normalized);
+    });
   }
 
   function setupLanguageSwitcher() {
@@ -531,6 +582,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ----------------- 10) INIT ----------------- */
+  normalizeInternalLinksForLocal();
   setActiveByPath();
   setActiveByScroll();
   setupLanguageSwitcher();

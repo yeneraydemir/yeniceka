@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
 
-        <div class="col-lg-1 col-md-2 footer-links"></div>
+        <div class="col-lg-1 col-md-2 footer-spacer" aria-hidden="true"></div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Ürünler</h4>

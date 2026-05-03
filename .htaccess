@@ -1,5 +1,9 @@
-Options -MultiViews
+Options -Indexes -MultiViews
+DirectoryIndex index.html
 
+RewriteEngine On
+
+# Legacy localized URLs -> canonical ASCII slugs
 Redirect 301 /ar/من-نحن /ar/about-us
 Redirect 301 /ar/المعرض /ar/gallery
 Redirect 301 /ar/المدونة /ar/blog
@@ -28,8 +32,74 @@ Redirect 301 /ben/স্লটারহাউস-সিস্টেম-কী /b
 Redirect 301 /ben/জবাই-লাইন-ফ্লো-প্ল্যান /ben/slaughter-line-flow-plan
 Redirect 301 /ben/কোরবানির-হাইজিন-ব্যারিয়ার /ben/eid-slaughter-hygiene-barriers
 
-RewriteEngine On
+# Canonical host/protocol for production only
+RewriteCond %{HTTP_HOST} ^www\.cekamezbaha\.com$ [NC,OR]
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP_HOST} ^(?:www\.)?cekamezbaha\.com$ [NC]
+RewriteRule ^ https://cekamezbaha.com%{REQUEST_URI} [R=301,L,NE]
 
+# Remove duplicate slashes in requested paths
+RewriteCond %{THE_REQUEST} \s/+(.+)//+ [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# Canonicalize root and language index variants
+RewriteRule ^index(?:\.html)?$ / [R=301,L,NE]
+RewriteCond %{DOCUMENT_ROOT}/$1 -d
+RewriteRule ^(.+)/index(?:\.html)?$ /$1/ [R=301,L,NE]
+
+# Remove trailing slash on non-directory URLs
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} .+/$
+RewriteRule ^(.+)/$ /$1 [R=301,L,NE]
+
+# Redirect malformed .html/ URLs to clean extensionless URLs
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html/+[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# Redirect .html requests to clean extensionless URLs
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[\s?]|$) [NC]
+RewriteCond %{DOCUMENT_ROOT}/%1.html -f
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# Serve existing files and directories directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Serve extensionless page requests from matching .html files
 RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.+?)/?$ $1.html [L]
+RewriteRule ^(.+)$ $1.html [L]
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # HTML should refresh quickly after content updates
+    ExpiresByType text/html "access plus 1 hour"
+
+    # Long cache for versioned/static assets
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|webp|png|jpe?g|svg|ico|woff2?|pdf)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(html?)$">
+        Header set Cache-Control "public, max-age=3600, must-revalidate"
+    </FilesMatch>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>

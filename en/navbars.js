@@ -1,4 +1,4 @@
-// navbar.js (TR + EN + RU + AR + BEN uyumlu, .html'li / .html'siz uyumlu)
+// navbars.js (TR + EN + RU + AR + BEN uyumlu, .html'li / .html'siz uyumlu)
 
 document.addEventListener("DOMContentLoaded", () => {
   /* ----------------- 0) DİL ve SAYFA HARİTASI ----------------- */

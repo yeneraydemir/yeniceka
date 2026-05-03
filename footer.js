@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const CURRENT_LANG = detectLang();
 
-  // Footer linklerini dile göre map'liyoruz (navbar.js ile uyumlu)
+  // Footer linklerini dile göre map'liyoruz (navbars.js ile uyumlu)
   const URLS = {
     home: { tr: "/", en: "/en/", ru: "/ru/" },
 

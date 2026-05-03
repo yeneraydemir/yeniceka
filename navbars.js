@@ -1,4 +1,4 @@
-// navbar.js (TR + EN + RU + AR + BEN uyumlu, .html'li / .html'siz uyumlu)
+// navbars.js (TR + EN + RU + AR + BEN uyumlu, .html'li / .html'siz uyumlu)
 
 document.addEventListener("DOMContentLoaded", () => {
   /* ----------------- 0) DİL ve SAYFA HARİTASI ----------------- */
@@ -117,6 +117,13 @@ document.addEventListener("DOMContentLoaded", () => {
       ar: "/ar/deboning-packaging",
       ben: "/ben/deboning-packaging"
     },
+    product_coldroom: {
+      tr: "/soguk-oda-mezbaha",
+      en: "/soguk-oda-mezbaha",
+      ru: "/soguk-oda-mezbaha",
+      ar: "/soguk-oda-mezbaha",
+      ben: "/soguk-oda-mezbaha"
+    },
     product_brisket_saw: {
       tr: "/dos-acma-testeresi",
       en: "/en/brisket-opening-saw",
@@ -168,6 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "kucukbas-kesim-ekipmanlari": "product_small",
     "kurban-kesim-hijyen-ekipmanlari": "product_hygiene",
     "kurban-kesim-parcalama-ekipmanlari": "product_deboning",
+    "soguk-oda-mezbaha": "product_coldroom",
     "dos-acma-testeresi": "product_brisket_saw",
     "mezbaha-sistemleri-nedir": "article_systems",
     "kurban-kesim-hat-akis-plani": "article_flow",
@@ -313,6 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <li><a href="${urlFor("product_small")}">${t("Küçükbaş Kesim Ekipmanları", "Small Ruminant Equipment", "Оборудование для МРС", "معدات ذبح الأغنام", "ছোট পশু জবাই সরঞ্জাম")}</a></li>
             <li><a href="${urlFor("product_hygiene")}">${t("Hijyen Ekipmanları", "Hygiene Equipment", "Гигиеническое оборудование", "معدات النظافة", "স্বাস্থ্যবিধি সরঞ্জাম")}</a></li>
             <li><a href="${urlFor("product_deboning")}">${t("Parçalama &amp; Paketleme", "Deboning &amp; Packaging", "Обвалка и упаковка", "التقطيع والتغليف", "কাটিং ও প্যাকেজিং")}</a></li>
+            <li><a href="${urlFor("product_coldroom")}">${t("Soğuk Oda Sistemleri", "Cold Room Systems", "Холодильные камеры", "أنظمة الغرف الباردة", "কোল্ড রুম সিস্টেম")}</a></li>
           </ul>
         </li>
 
